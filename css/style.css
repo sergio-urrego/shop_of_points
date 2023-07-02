@@ -1,0 +1,15 @@
+body{
+    display: flex;
+    align-items: center;
+    background: #0097B2;
+    background: linear-gradient(to right, #0097B2, #7ED957);
+}
+
+.imagen{
+    width:400px;
+
+}
+
+
+
+

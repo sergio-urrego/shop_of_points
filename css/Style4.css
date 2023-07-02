@@ -1,0 +1,29 @@
+body{
+    background: #0097B2;
+    background: linear-gradient(to right, #0097B2, #7ED957 );
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.container{
+    border: 3px;
+    margin: auto;
+    padding: 35px;
+    align-items: center;
+}
+
+.form {
+    background-color: white;
+    margin: auto;
+    border-radius: 8px;
+    padding: 20px 30px;
+    box-shadow: 0 10px 25px rgba(92, 99, 105, .2);
+    justify-content: center;
+    font-family: 'Times New Roman', Times, serif;
+    align-items: center;
+}
+
+.form-button{
+    display: flex;
+    justify-content: space-between;
+}
+

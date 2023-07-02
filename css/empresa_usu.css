@@ -1,0 +1,413 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:  sans-serif;
+}
+body{
+    min-height: 100vh;
+    background-color: rgb(243, 237, 248); /*cente, cover*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/*atributos de la tabla*/
+main.table{
+    width: 100%; /*sea mas grande*/
+    height: 80vh;
+    background-color: rgba(245, 242, 239, 0.892);
+    backdrop-filter: blur(7px); /*sobresale el cuadro de la tabla, retrato*/
+    box-shadow: 0 20px 40px #0005;
+    border-radius: 30px;
+    overflow: hidden;
+    margin-left: 50px;
+} 
+/*titulo usuarios*/ 
+.table__header{
+    width: 100%;
+    height: 10%;
+    background-color: rgba(138, 236, 0, 0.929);
+    padding: 10px; /*espacio de arriba, abjo*/
+    text-align: center;
+    justify-content: center;
+    
+}
+/*contenido barra*/
+.table__body{
+    width: 95%;
+    max-height: calc(89% - .20rem);
+    background-color: rgba(200, 202, 201, 0.733);
+    margin: 20px; /*que no toque con el titulo*/
+    border-radius: 15px;
+    overflow: auto; /*esquinas superiores*/
+    text-align: center;
+    margin-left: 33px;
+}
+/*.table__body::-webkit-scrollbar{
+    width: 0.5rem;
+    height: 0.5rem;
+}
+
+.table__body::-webkit-scrollbar-thumb{
+    border-radius: .5rem;
+    background-color: #0004;
+    visibility: hidden;
+}
+.table__body:hover:-webkit-scrollbar{
+    visibility: visible;
+}
+*/
+
+table, th, td{
+    border-collapse: collapse;/*se junta el color del menu*/
+    padding: 30px;  /*espacio */
+    margin-left: 35px;    
+}
+tbody tr td th {
+    justify-items: center;
+}
+
+/*estilo de los nombres del menu*/
+thead th{
+    position: sticky;
+    top: 0;
+    left:0;
+    background-color: #92908ffe;
+    margin-left: 10vh;
+    font-size: 20px;
+}
+
+/*aplicar estilos a la tabla*/
+tbody tr:nth-child(even) {
+    background-color: #0000000b;
+}
+tbody tr:hover {
+    background-color: rgba(166, 163, 163, 0.4); /*color cuando pasa el cursor */
+    cursor: pointer;
+}
+.tabla{
+    justify-content: center;
+    align-items: center;
+}
+
+/*menu*/
+
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none ; /*quitar las lineas*/
+}
+a{
+    color: #fff; /*color de la letra*/
+    text-decoration: none;
+}
+
+/*fondos animado*/
+.fondo-animado{
+    position: absolute;
+    width: 100%;
+    height: 100% ;
+    top: 0;
+    left: 0;
+
+}
+span.uno,
+span.dos,
+span.tres,
+span.cuatro {
+  border: 0;
+  display: block; /* se muestre como un bloque, es decir lineas separadas*/
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  animation: vuelta  7s linear infinite normal both;
+}
+/*funcion de cada cuadro*/
+span.uno {
+    width: 100px;
+    height: 100px;
+    bottom: -100px; /*desplazamiento vertical*/
+    background-color: rgb(23, 12, 189);
+}
+span.dos {
+    width: 70px;
+    height: 70px;
+    bottom: -70px;
+    background-color: rgb(233, 57, 197);
+}
+span.tres {
+    width: 50px;
+    height: 50px;
+    bottom: -50px;
+    background-color: rgb(190, 20, 74);
+}
+span.cuatro {
+    width: 20px;
+    height: 20px;
+    bottom: -20px;
+    background-color: rgb(7, 146, 24);
+}
+@keyframes vuelta {
+    from {
+        transform: rotate(0deg); /*no tendra rotacion en su estado inicial*/ 
+        bottom: 0; /*distancia de 0 pixeles*/
+        opacity: 0; 
+    }
+    5% {
+        opacity: 1;
+        
+    }
+    60% {
+        opacity: 1;
+
+    }
+    to {
+        transform: rotate(360deg); /*giro desde su posición inicial.*/
+        bottom: calc(100% + 100px); /*fuera de la vista, es decir a la parte superior*/
+        opacity: 0;
+    }
+}
+.fondo-animado span:nth-child(1) {
+    left: 5%;
+}
+.fondo-animado span:nth-child(2) {
+    left: 50%;
+}
+.fondo-animado span:nth-child(3) {
+    left: 35%;
+}
+.fondo-animado span:nth-child(4) {
+    left: 75%;
+}
+.fondo-animado span:nth-child(5) { /*para separar los grupos*/
+    left: 25%;
+}
+.fondo-animado span:nth-child(6) {
+    left: 85%;
+}
+.fondo-animado span:nth-child(7) {
+    left: 90%;
+}
+.fondo-animado span:nth-child(8) {
+    left: 65%;
+}
+.fondo-animado span:nth-child(9) {
+    left: 60%;
+}
+.fondo-animado span:nth-child(10) {
+    left: 75%;
+}
+.fondo-animado span:nth-child(11) {
+    left: 10%;
+}
+.fondo-animado span:nth-child(12) {
+    left: 45%;
+
+}
+/*duracion*/
+span.delay-1 {
+    animation-delay: 1s; /*retraso de la animacion*/
+    animation-duration: 2s; 
+}
+span.delay-2 {
+    animation-delay: 2s;
+    animation-duration: 1s;
+}
+span.delay-3 {
+    animation-delay: 3s;
+    animation-duration: 4s;
+}
+span.delay-4 {
+    animation-delay: 2s;
+    animation-duration: 2s;
+}
+span.delay-5 {
+    animation-delay: 1s;
+    animation-duration: 3s;
+}
+span.delay-7 {
+    animation-delay: 2s;
+    animation-duration: 2s;
+}
+/*menuu*/
+.menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 10;  /*posición de apilamiento más alta que otros elementos*/
+}
+.ul-home{
+    height: 150px; 
+}
+.ul-home li a {
+    display: inline-flex; /*el elemento ocupará solo el espacio necesario*/
+    flex-direction: column; /*los elementos se colocarán en una columna vertical, de arriba hacia abajo.*/
+    align-items:center ;
+    justify-content: center;
+    width: 150px;
+    height: 150px;
+    background-color: rgb(0, 255, 8);
+    border-radius:0 0 50% 0 ;/*esquina inferior derecha*/
+    box-shadow: 0 0 15px 12px rgb(0, 0, 0,.5);/*sombra*/
+}
+/*icono de la casa*/
+
+.ul-home li a svg {
+    font-size: 3rem;
+    margin-bottom: .10rem;
+}
+.ul-home li a span { /*nombres del menu*/
+    font-size: 1.7em;
+}
+/*ocultar desborde*/
+.a-inicio {
+    overflow: hidden; 
+}
+.a-inicio svg{
+    display: inline-block; 
+    transform: rotateX(0deg) scale(1) translate(0,0); /*no girara en x,conservará su tamaño original, no producirá ninguna traslación en ninguna dirección*/
+    transition: all ease-in-out 300ms; /*suavisar la transicion*/
+}
+/*aplicar transicion al menu*/
+.a-inicio:hover svg {
+    transform: rotatey(180deg) scale(1) translate(25%,-25%); /* el elemento se girará horizontalmente, 25% (eje X)traslación a la derecha en un 25% del ancho, 25% (eje Y)traslación hacia arriba en un 25% de altura*/
+}
+
+/*iconos del menu*/
+.ul-enlaces {
+    height: calc(100% - 190px); /*100% el elemento tomará el 100% de la altura disponible y el 190 restara  la altura del elemento en 190px*/
+    background-color:rgb(255, 98, 0); ;
+    width: 85px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 15px 2px rgba(201, 83, 24, 0.5);
+}
+.ul-enlaces li + li{
+    border-top: 1px solid rgba(79, 219, 184, .5); /*lineaa*/
+}
+.ul-enlaces a{
+    display: inline-flex; /*el espacio de un elemento a otro*/
+    align-items: center; 
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 65px;
+    margin-top: 20px;
+}
+.ul-enlaces a svg {
+    font-size: 1.3rem;
+    transition: all ease-in-out 300ms; 
+    
+}
+.ul-enlaces a:hover svg {
+    transform: scale(1.5); /*el elemento se agrandara a un ancho y alto de 150 píxeles.*/
+}
+/*giroo de los nombres*/
+.ul-enlaces a span {
+    font-size:20px ;
+    display: inline-block;
+    position: absolute;
+    background-color: #fff;
+    padding: 5px 10px;
+    border-radius: 12px;
+    transform: translateX(0) rotate(-180);
+    transition: all ease-in-out 300ms; 
+    opacity: 0;
+}
+.ul-enlaces a:hover span {
+    transform: translateX(4rem) rotate(0); /*traslación horizontal de 4 unidades rem al elemento*/
+    opacity: 1;
+}
+.ul-enlaces a span.fondo-violeta{
+    background-color: violet;
+}
+.ul-enlaces a span.fondo-cielo{
+    background-color: #48afff;
+}
+.ul-enlaces a span.fondo-verde{
+    background-color: #22e12b;
+}
+.ul-enlaces a span.fondo-amarillo{
+    background-color: #e1c705;
+}
+.ul-enlaces a span.fondo-rojo{
+    background-color: #ea0808;
+}
+
+/*barra de busqueda*/
+.container-fluid{
+    position: absolute;
+    width: 40%;
+    top: 4px;
+    display: flex;
+    margin-left: 63%;
+    border-radius: 10px;
+}
+.container-fluid .btn{
+    background-color: #ff5b00;
+    color: white;
+}
+
+/*formulario de actualizacionn*/
+.top{
+    top: 0;
+    height: 90vh;
+    background-color: rgba(46, 44, 44, 0.8);
+    display: grid;
+    place-items: center;
+    transition: .5s; /*tiempo que se desplega*/
+  }
+  .cerrar{
+    top: 3em;
+    left: 70%;
+  }
+  .translate{
+    transform: translateY(-100%);  /*se desplegara hacia abajo*/
+  }
+.formulario{
+    position: absolute;
+    width: 100%;
+}
+
+.icono:hover svg {
+    transform: scale(1.5); /*el elemento se agrandara a un ancho y alto de 150 píxeles.*/
+}
+
+/*Segundo formulario*/
+.consultas{
+    position: absolute;
+    width: 100%;
+    top: 0;
+    height: 90vh;
+    background-color: rgba(46, 44, 44, 0.8);
+    display: grid; /*para centrar el formulario*/
+    place-items: center;
+    transition: .5s; /*tiempo que se desplega*/
+}
+
+.close{
+    top: 3em;
+    left: 70%;
+    background-color: red;
+}
+.close:hover{
+    background-color: red;
+}
+.desplegar{
+    transform: translateY(-100%);
+}
+
+.cerrar{
+    background-color: #ea0808;
+}
+.cerrar:hover{
+    background-color: #ea0808;
+}
+
+.color{
+    background-color:#4661fa;
+}
+
+
+

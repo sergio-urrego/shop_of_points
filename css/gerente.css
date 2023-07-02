@@ -1,0 +1,370 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: #fff;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none ; /*quitar las lineas*/
+}
+a{
+    color: #fff; /*color de la letra*/
+    text-decoration: none;
+}
+
+/*fondos animado*/
+.fondo-animado{
+    position: absolute;
+    width: 100%;
+    height: 100% ;
+    top: 0;
+    left: 0;
+
+}
+span.uno,
+span.dos,
+span.tres,
+span.cuatro {
+  border: 0;
+  display: block; /* se muestre como un bloque, es decir lineas separadas*/
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  animation: vuelta  7s linear infinite normal both;
+}
+/*funcion de cada cuadro*/
+span.uno {
+    width: 100px;
+    height: 100px;
+    bottom: -100px; /*desplazamiento vertical*/
+    background-color: rgb(23, 12, 189);
+}
+span.dos {
+    width: 70px;
+    height: 70px;
+    bottom: -70px;
+    background-color: rgb(233, 57, 197);
+}
+span.tres {
+    width: 50px;
+    height: 50px;
+    bottom: -50px;
+    background-color: rgb(190, 20, 74);
+}
+span.cuatro {
+    width: 20px;
+    height: 20px;
+    bottom: -20px;
+    background-color: rgb(7, 146, 24);
+}
+@keyframes vuelta {
+    from {
+        transform: rotate(0deg); /*no tendra rotacion en su estado inicial*/ 
+        bottom: 0; /*distancia de 0 pixeles*/
+        opacity: 0; 
+    }
+    5% {
+        opacity: 1;
+        
+    }
+    60% {
+        opacity: 1;
+
+    }
+    to {
+        transform: rotate(360deg); /*giro desde su posición inicial.*/
+        bottom: calc(100% + 100px); /*fuera de la vista, es decir a la parte superior*/
+        opacity: 0;
+    }
+}
+.fondo-animado span:nth-child(1) {
+    left: 5%;
+}
+.fondo-animado span:nth-child(2) {
+    left: 50%;
+}
+.fondo-animado span:nth-child(3) {
+    left: 35%;
+}
+.fondo-animado span:nth-child(4) {
+    left: 75%;
+}
+.fondo-animado span:nth-child(5) { /*para separar los grupos*/
+    left: 25%;
+}
+.fondo-animado span:nth-child(6) {
+    left: 85%;
+}
+.fondo-animado span:nth-child(7) {
+    left: 90%;
+}
+.fondo-animado span:nth-child(8) {
+    left: 65%;
+}
+.fondo-animado span:nth-child(9) {
+    left: 60%;
+}
+.fondo-animado span:nth-child(10) {
+    left: 75%;
+}
+.fondo-animado span:nth-child(11) {
+    left: 10%;
+}
+.fondo-animado span:nth-child(12) {
+    left: 45%;
+
+}
+/*duracion*/
+span.delay-1 {
+    animation-delay: 1s; /*retraso de la animacion*/
+    animation-duration: 2s; 
+}
+span.delay-2 {
+    animation-delay: 2s;
+    animation-duration: 1s;
+}
+span.delay-3 {
+    animation-delay: 3s;
+    animation-duration: 4s;
+}
+span.delay-4 {
+    animation-delay: 2s;
+    animation-duration: 2s;
+}
+span.delay-5 {
+    animation-delay: 1s;
+    animation-duration: 3s;
+}
+span.delay-7 {
+    animation-delay: 2s;
+    animation-duration: 2s;
+}
+/*menuu*/
+.menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 10;  /*posición de apilamiento más alta que otros elementos*/
+}
+.ul-home{
+    height: 150px; 
+}
+.ul-home li a {
+    display: inline-flex; /*el elemento ocupará solo el espacio necesario*/
+    flex-direction: column; /*los elementos se colocarán en una columna vertical, de arriba hacia abajo.*/
+    align-items:center ;
+    justify-content: center;
+    width: 150px;
+    height: 150px;
+    background-color: rgb(0, 255, 8);
+    border-radius:0 0 50% 0 ;/*esquina inferior derecha*/
+    box-shadow: 0 0 15px 12px rgb(0, 0, 0,.5);/*sombra*/
+}
+/*icono de la casa*/
+
+.ul-home li a svg {
+    font-size: 3rem;
+    margin-bottom: .10rem;
+}
+.ul-home li a span { /*nombres del menu*/
+    font-size: 1.7em;
+}
+/*ocultar desborde*/
+.a-inicio {
+    overflow: hidden; 
+}
+.a-inicio svg{
+    display: inline-block; 
+    transform: rotateX(0deg) scale(1) translate(0,0); /*no girara en x,conservará su tamaño original, no producirá ninguna traslación en ninguna dirección*/
+    transition: all ease-in-out 300ms; /*suavisar la transicion*/
+}
+/*aplicar transicion al menu*/
+.a-inicio:hover svg {
+    transform: rotatey(180deg) scale(1) translate(25%,-25%); /* el elemento se girará horizontalmente, 25% (eje X)traslación a la derecha en un 25% del ancho, 25% (eje Y)traslación hacia arriba en un 25% de altura*/
+}
+
+/*iconos del menu*/
+.ul-enlaces {
+    height: calc(100% - 190px); /*100% el elemento tomará el 100% de la altura disponible y el 190 restara  la altura del elemento en 190px*/
+    background-color:rgb(255, 98, 0); ;
+    width: 85px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 15px 2px rgba(201, 83, 24, 0.5);
+}
+.ul-enlaces li + li{
+    border-top: 1px solid rgba(79, 219, 184, .5); /*lineaa*/
+}
+.ul-enlaces a{
+    display: inline-flex; /*el espacio de un elemento a otro*/
+    align-items: center; 
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 65px;
+    margin-top: 20px;
+}
+.ul-enlaces a svg {
+    font-size: 1.3rem;
+    transition: all ease-in-out 300ms; 
+    
+}
+.ul-enlaces a:hover svg {
+    transform: scale(1.5); /*el elemento se agrandara a un ancho y alto de 150 píxeles.*/
+}
+/*giroo de los nombres*/
+.ul-enlaces a span {
+    font-size:20px ;
+    display: inline-block;
+    position: absolute;
+    background-color: #fff;
+    padding: 5px 10px;
+    border-radius: 12px;
+    transform: translateX(0) rotate(-180);
+    transition: all ease-in-out 300ms; 
+    opacity: 0;
+}
+.ul-enlaces a:hover span {
+    transform: translateX(4rem) rotate(0); /*traslación horizontal de 4 unidades rem al elemento*/
+    opacity: 1;
+}
+.ul-enlaces a span.fondo-violeta{
+    background-color: violet;
+}
+.ul-enlaces a span.fondo-cielo{
+    background-color: #48afff;
+}
+.ul-enlaces a span.fondo-verde{
+    background-color: #22e12b;
+}
+.ul-enlaces a span.fondo-amarillo{
+    background-color: rgb(225, 203, 38);
+}
+.ul-enlaces a span.fondo-rojo{
+    background-color: #ef0e0e;
+}
+/*seccion del texto*/
+.seccion-header {
+    display: flex;
+    height: 100vh;
+    margin-right:500px;
+    align-items: center;
+    justify-content: center;
+    font-family:" Cooper Black";
+    text-shadow: 0 0 5px rgba(29, 28, 28, 0.5); /*sombra del texto* despla, tama*/
+    z-index: 5;
+}
+.seccion-header h1 {
+    font-size: 4rem;
+    display: flex;
+    margin-bottom: 2rem;
+    
+}
+.seccion-header h1 span {
+    display: inline-block; /*espacio de las letras*/
+    cursor: default;
+} 
+.seccion-header h1 span.espacio {
+    width: 20px;
+}
+.ul-home .a-inicio:hover span,
+.seccion-header h1 span:hover { /*.seccion-header h1 span:hover*/
+    animation: animar-texto 1s ease-in-out 1 normal both;
+}
+@keyframes animar-texto {
+    from {
+        transform: scale3d(1, 1, 1);
+    }
+    40% {
+        transform: scale3d(.75, 1.25, 1);
+        color: aqua;
+    }
+    50% {
+        transform: scale3d(1.15, 0.85, 1);
+    }
+    65% {
+        transform: scale3d(.95, 1.05, 1);
+    }
+    75% {
+        transform: scale3d(1.05, 0.95, 1);
+        color: #fff;
+    }
+    to {
+        transform: scale3d(1, 1, 1);
+    }
+}
+.seccion-header h3{
+    font-size: 2rem;
+    width: 450px;
+    margin-bottom: 3rem;
+    color: #1a1b1b;
+        
+}
+.seccion-header ul{
+    display: flex;
+    font-size: 1.7rem;
+}
+.seccion-header ul li + li {
+    margin-left: 2rem ;
+}
+.seccion-header ul img{
+    display: flex;
+    width: 500px;
+    height: 500px;
+    align-items: center;
+    justify-content: center;
+    top: 50%;
+    position: absolute;
+       
+}
+.header-content{
+        margin-left:80%;
+        margin-top: 15px
+}
+
+/*Criculo de carga*/
+*,*:after, *::before{
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+#contenedor_carga{
+    background-color: white;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    -webkit-transition: all 3s ease;
+    -o-transition: all 3s ease;
+    transition: all 3s ease;
+    z-index: 10000; /*se posiciones los elementos*/
+}
+#carga{
+    border: 15px solid rgba(143, 139, 139, 0.79);
+    border-top-color: #7ff426; /*colores borde superior*/
+    border-top-style: groove ;
+    height: 100px;
+    width: 100px;
+    border-radius: 100%; /*circulos*/
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    -webkit-animation: girar 1.5s linear infinite;
+    -o-animation: girar 1.5s linear infinite;
+    animation: girar 1.5s linear infinite;
+}
+@keyframes girar{
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
