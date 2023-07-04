@@ -133,17 +133,16 @@
                                     for($i=0; $i < count($campos); $i++){
                                         echo "<li>".$campos[$i]."</li>";
                                     }
-                                }else{
-                                    $agregar="INSERT INTO empresa 
-                                    (nit, nombre, direccion, correo_empresa, telefono, celular, usuario_creo, fecha_creo) VALUES
-                                    ('$_POST[nit]','$_POST[nombre]','$_POST[direccion]','$_POST[correo]','$_POST[telefono]',
-                                    '$_POST[celular]','$_SESSION[user]','$fecha_actual')";
-                                    $resultado=mysqli_query($con,$agregar);
-                                    if ($resultado){
-                                        ?>
+                                }else{?>
                                         <script type="text/javascript"> 
-                                        var opciones=confirm("se ha agregado la empresa correctamente")
-                                           if (opciones==true){ 
+                                        var opciones=confirm("estas seguro de agragar esta empresa?")
+                                           if (opciones==true){ <?php
+                                                $agregar="INSERT INTO empresa 
+                                                (nit, nombre, direccion, correo_empresa, telefono, celular, usuario_creo, fecha_creo) VALUES
+                                                ('$_POST[nit]','$_POST[nombre]','$_POST[direccion]','$_POST[correo]','$_POST[telefono]',
+                                                '$_POST[celular]','$_SESSION[user]','$fecha_actual')";
+                                                $resultado=mysqli_query($con,$agregar);?>
+
                                                window.location.href="http://localhost/shop_of_points/html/administrador.php";
                                             }else{
                                                 window.location.href="http://localhost/shop_of_points/html/agregar_empresa.php"
@@ -151,11 +150,7 @@
                                         </script>
                                         <?php
                                         }
-                                        else{
-                                            echo"OCURRIO UN ERROR AL AGREGAR LA EMPRESA PORFAVOR VUELVA A INTENTARLO ";
-                                        }
                                 }
-                                "</div>";}
                             ?>
                     <div class="row g-3">
                         <div class="col-md-6 d-flex align-items-center flex-row-reverse">

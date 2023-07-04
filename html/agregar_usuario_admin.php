@@ -137,19 +137,25 @@
                                     array_push($campos, "Ingresa un correo electronico valido");
                                 }
 
-                                if($contraseña=='' & $clave==''){
+                                if($contraseña==''){
                                     array_push($campos, "el campo contraseña no puede estar vacio");
                                 }
-                                if(!($contraseña==$clave)){
-                                    array_push($campos, "las contraseñas no coinciden ");
+                                if($clave=''){
+                                    array_push($campos, "confirmen su contraseña");
                                 }
+                                if ($contraseña==$clave){
+                                    array_push($campos, "su contraseñas no coinciden ");
 
+                                }
                                 if (count($campos)>0){
                                     echo "<div class='error'>";
                                     for($i=0; $i < count($campos); $i++){
                                         echo "<li>".$campos[$i]."</li></div>";
                                     };
                                 }else{
+                                    $agregarusuario="INSERT INTO clientes c inner join 
+                                    detaslle_clientes d 
+                                    (c.cedula,c.nombre,c.apellidos,c.correo,c.ceular,c.usuario_creo,c.fecha_creacion ) "
                                     
                                 }
                             }
