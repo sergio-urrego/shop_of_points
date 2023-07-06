@@ -1,7 +1,11 @@
 <?php
-require_once('../php/conecxion.php');
-require_once('../php/validate_session.php');
-
+ require_once('../php/validate_session.php');
+ require_once('../php/conecxion.php');
+ if (isset($_POST["buscar"])){
+    $validacion=true;
+}else{
+    $validacion=false;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,13 +15,9 @@ require_once('../php/validate_session.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Documen</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/listado_usuarios.css">
+    <link rel="stylesheet" href="../css/listado_clientes_admin.css">
 </head>
 <body>
-    <!--circulo de carga-->
-    <div id="contenedor_carga">
-        <div id="carga"></div>
-    </div>
     <header id="header" class="contenedor-header">
         <!--fondo animado-->
         <div class="fondo-animado">
@@ -53,7 +53,16 @@ require_once('../php/validate_session.php');
              </ul>
  
              <ul class="ul-enlaces">
-                <li>
+                 <!-- <li> esto es lo de consultar usuarios
+                     <a href="/html/consultas_usuarios.html" title="">
+                         <svg xmlns="http://www.w3.org/2000/svg" width="36" height="46" fill="currentColor" class="bi bi-file-earmark-person" viewBox="0 0 16 16">
+                             <path d="M11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                             <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2v9.255S12 12 8 12s-5 1.755-5 1.755V2a1 1 0 0 1 1-1h5.5v2z"/>
+                         </svg>
+                       <span class="fondo-rojo">usuarios</span>
+                     </a>
+                 </li> -->
+                 <li>
                     <a href="../html/agregar_empresa.php" title="">
                         <svg xmlns="http://www.w3.org/2000/svg" width="36" height="46" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
                             <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
@@ -71,6 +80,7 @@ require_once('../php/validate_session.php');
                          <span class="fondo-verde">control</span>                         
                      </a>
                  </li>
+ 
                  <li>
                     <a href="../html/empresa_usu.php" >
                         <svg xmlns="http://www.w3.org/2000/svg" width="36" height="466" fill="currentColor" class="bi bi-check2-circle" viewBox="0 0 16 16">
@@ -102,16 +112,19 @@ require_once('../php/validate_session.php');
              </ul>
          </nav>
 <!--tablas-->
+<div class="arriba">    
     <main class="table">      
         <section class="table__header">
-            <div class="container">
-              <form class="d-flex" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post" role="search">
-                <input class="form-control me-2" type="search" name="buscar" placeholder="Buscar" aria-label="Search" value="">
-                <button class="btn btn-outline-success" type="submit">Buscar</button>
-              </form>
-            </div>
+                <div class="container-fluid">
+                  <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Buscar</button>
+                  </form>
+                </div>
+            
             <h1>Usuarios</h1>
         </section>
+
         <section class="table__body">
             <table>
                 <thead>
@@ -121,12 +134,10 @@ require_once('../php/validate_session.php');
                     <th>Apellido</th>
                     <th>Celular</th>
                     <th>Correo</th>
-                    
+                    <th>Opcion.</th>
                     </tr>
                 </thead>
-
-                <tbody>
-                    <?php
+                <?php
                     if (!isset($_POST["buscar"])){
                         $consulta="SELECT c.cedula, c.nombre, c.apellidos, c.celular, c.correo, u.nit_empresa 
                                      FROM clientes c 
@@ -141,6 +152,21 @@ require_once('../php/validate_session.php');
                             <td><?php echo $usuarios['apellidos'] ?></td>
                             <td><?php echo $usuarios['celular'] ?></td>
                             <td><?php echo $usuarios['correo'] ?></td>
+                            <td>
+                            <button class="btn btn-sm btn-danger"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16" >
+                                <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z"/>
+                            </svg>
+                            </button>
+                            <button class="btn btn-sm btn-warning"><svg  xmlns= "http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-fill" viewBox="0 0 16 16">
+                                <path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z"/>
+                              </svg>
+                            </button>
+                            <button class="btn btn-sm btn-success">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+                                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                                    </svg>
+                            </button>
+                        </td>
                         </tr><?php }
                     }else if(isset($_POST["buscar"])){
                         
@@ -155,6 +181,21 @@ require_once('../php/validate_session.php');
                                 <td><?php echo $usuarios['apellidos'] ?></td>
                                 <td><?php echo $usuarios['celular'] ?></td>
                                 <td><?php echo $usuarios['correo'] ?></td>
+                                <td>
+                            <button class="btn btn-sm btn-danger"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16" >
+                                <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z"/>
+                            </svg>
+                            </button>
+                            <button class="btn btn-sm btn-warning"><svg  xmlns= "http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-fill" viewBox="0 0 16 16">
+                                <path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z"/>
+                              </svg>
+                            </button>
+                            <button class="btn btn-sm btn-success">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+                                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                                    </svg>
+                            </button>
+                        </td>
                             </tr><?php }
                             }else{
                             
@@ -172,19 +213,171 @@ require_once('../php/validate_session.php');
                                 <td><?php echo $usuarios['apellidos'] ?></td>
                                 <td><?php echo $usuarios['celular'] ?></td>
                                 <td><?php echo $usuarios['correo'] ?></td>
+                                <td>
+                            <button class="btn btn-sm btn-danger"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16" >
+                                <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z"/>
+                            </svg>
+                            </button>
+                            <button class="btn btn-sm btn-warning"><svg  xmlns= "http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-fill" viewBox="0 0 16 16">
+                                <path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z"/>
+                              </svg>
+                            </button>
+                            <button class="btn btn-sm btn-success">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+                                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                                    </svg>
+                            </button>
+                        </td>
                             </tr><?php }
                         }}?>
                 </tbody>
+                <!-- <tbody class="icono">
+                    <tr>
+                        <td>1</td>
+                        <td>Karla Alejadra</td>
+                        <td>Manzana D</td>
+                        <td>123456789</td>
+                        <td>rojas@gmail.com</td>
+                        <td>
+                            <button class="btn btn-sm btn-danger"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16" >
+                                <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z"/>
+                            </svg>
+                            </button>
+                            <button class="btn btn-sm btn-warning"><svg  xmlns= "http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-fill" viewBox="0 0 16 16">
+                                <path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z"/>
+                              </svg>
+                            </button>
+                            <button class="btn btn-sm btn-success">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+                                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                                    </svg>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody> -->
             </table>
         </section>
-    </main>
-    <script>
-   window.onload = function(){
-    var contenedor = document.getElementById('contenedor_carga');
+    
+<!--formulario de actualización-->
+    <div class="formulario top translate" id="actualizar">
+        <form class="form-control w-50">
+            <h1 class="text-center">Actalizacion de Usuarios</h1>
+            <div class=" form-control border-white">
+                <label for="">Cedula</label>
+                <input type="text" class="form-control w-90 act" value="" name="empresa_nit" >
+            </div>
 
-    contenedor.style.visibility = 'hidden';
-    contenedor.style.opacity= '0';
-    }
+            <div class="form-control border-white text-align-center">
+                <label for="">Nombre</label>
+                <input type="text" class="form-control w-90 act" name="Usuario_nombre">
+            </div>
+
+            <div class="form-control border-white">
+                <label for="">Apellido :</label>
+                <input type="text" class="form-control w-90 act" name="Usuario_apellido">
+            </div>
+
+            <div class="form-control border-white">
+                <label for="">Celular :</label>
+                <input type="text" class="form-control w-90 act" name="Usuario_celular">
+            </div>
+
+            <div class="form-control border-white d-flex justify-content-evenly">
+                <label for="">Correo :</label>
+                <input type="number" class="form-control w-25 act" name="Usuario_correo">
+            </div>
+            
+
+
+            <div class="form-control border-white">
+                <button class="btn btn-primary">Guardar</button>
+            </div>
+        </form>
+        <button class="position-absolute btn close">close</button>
+    </div>
+
+    <!--Segundo Formulario-->
+    <div class="consultas desplegar" id="consultar">
+        <form class="form-control w-50">
+            <h1 class="text-center">Consultar  Usuarios</h1>
+            <div class=" form-control border-white">
+                <label for="">Cedula</label>
+                <input type="text" disabled class="form-control w-90" value="" name="Usuario_empresa" >
+            </div>
+
+            <div class="form-control border-white text-align-center">
+                <label for="">Nombre</label>
+                <input type="text" disabled class="form-control w-90" name="nombre_usuario">
+            </div>
+
+            <div class="form-control border-white">
+                <label for="">Apellido  :</label>
+                <input type="text"disabled class="form-control w-90" name="usuario_Apellido">
+            </div>
+
+            <div class="form-control border-white">
+                <label for="">Celular :</label>
+                <input type="text" disabled class="form-control w-90" name="Usuario_celular">
+            </div>
+
+            <div class="form-control border-white d-flex justify-content-evenly">
+                <label for="">Correo :</label>
+                <input type="number" disabled class="form-control w-25" name="Usuario_correo">
+            </div>
+            
+            <div class="form-control border-white">
+                <button class="btn1 azul">Ingresar</button>
+            </div>
+        </form>
+        <button class="cerrar position-absolute btn">close</button>
+    </div>
+    </main>
+
+    <script>
+        const table = document.getElementById("table");
+        const actualizar = document.getElementById("actualizar");
+        const consultar = document.getElementById("consultar")
+        const inputs = document.querySelectorAll(".act");
+        console.log(inputs);
+        let count = 0;
+        
+        window.addEventListener("click", (e)  => {
+            
+         if (e.target.matches(".btn-warning")) {
+            
+            let data = e.target.parentElement.parentElement.children;
+            fillData(data);
+            actualizar.classList.toggle("translate");
+          }
+
+          if (e.target.matches(".close")) {
+          actualizar.classList.toggle("translate");
+          count=0
+          }
+
+          if (e.target.matches(".btn-success")) {
+            
+            let data = e.target.parentElement.parentElement.children;
+            fillData(data);
+            consultar.classList.toggle("desplegar");
+          }
+
+          if (e.target.matches(".cerrar")) {
+          consultar.classList.toggle("desplegar");
+          count=0
+          };
+        });
+        
+        
+        const fillData = (data) => {
+          for (let index of inputs) {
+            index.value = data[count].textContent;
+            count += 1;
+          }
+        };
+
     </script>
+    
+    
 </body>
 </html>

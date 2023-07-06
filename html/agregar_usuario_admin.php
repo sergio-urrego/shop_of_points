@@ -114,6 +114,8 @@
                     <div class="row g-3">
                         <div class=" col-md-6 d-flex align-items-center flex-row-reverse">
                             <?php 
+                            date_default_timezone_set('America/Bogota');
+                            $fecha_actual = date("Y-m-d h:i:s");
                             if(isset($_POST['nombre'])){
                                 $nombre=$_POST['nombre'];
                                 $apellidos=$_POST['apellidos'];
@@ -153,9 +155,10 @@
                                         echo "<li>".$campos[$i]."</li></div>";
                                     };
                                 }else{
-                                    $agregarusuario="INSERT INTO clientes c inner join 
-                                    detaslle_clientes d 
-                                    (c.cedula,c.nombre,c.apellidos,c.correo,c.ceular,c.usuario_creo,c.fecha_creacion ) "
+                                    // $agregarusuario="INSERT INTO clientes (cedula, nombre, apellidos, correo, celular, usuario_creo, fecha_creacion) VALUES('$_POST[nombre]','$_POST[apellidos]','$_POST[gmail]','$_POST[celular]','$_SESSION[user]','$fecha_actual')";
+                                    // $resultadocliente=mysql_query($con,$agregarusuario);
+                                    // $creacionclave="INSERT INTO detalles_clientes dc(clave) values('$_POST[contraseña]') inner join clientes c on c.cedula=dc.cedula_cliente where  c.cedula='' and dc.nit_empresa='' ";
+                                    
                                     
                                 }
                             }
