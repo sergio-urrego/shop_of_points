@@ -98,64 +98,13 @@
         <!--section -->
         <section class="seccion-header">
             <div class="container mt-5 ">
-                <form id="form" form class="form col-10 col-md-7  " action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post">
+                <form id="form" name="form" form class="form col-10 col-md-7"  enctype="multipart/form-data" method="post">
                     <h2 class="fw-bold text-center ">Registro de la Empresa </h2>
                     <br>
-                        <?php
-                            date_default_timezone_set('America/Bogota');
-                            $fecha_actual = date("Y-m-d h:i:s");
-                            if(isset($_POST['nit'])){
-                                $nit=$_POST['nit'];
-                                $nombre=$_POST['nombre'];
-                                $direccion=$_POST['direccion'];
-                                $correo=$_POST['correo'];
-                                $telefono=$_POST['telefono'];
-                                $celular=$_POST['celular'];
-                            
-                                $campos=array();
-                                if($nit==''){
-                                    array_push($campos, "el campo nit no puede estar vacio");
-                                }
-                                if($nombre==''){
-                                    array_push($campos, "el campo nombre no puede estar vacio");
-                                }
-                                if($direccion==''){
-                                    array_push($campos, "el campo direccion no puede estar vacio");
-                                }
-                                if($correo==''|| strpos($correo,"@")=== false){
-                                    array_push($campos, "Ingresa un correo electronico valido");
-                                }
-                                if($celular=='' || strlen($celular==10)){
-                                    array_push($campos, "Ingresa un numero de celular valido");}
-                                
-                                if (count($campos)>0){
-                                    echo "<div class='error'>";
-                                    for($i=0; $i < count($campos); $i++){
-                                        echo "<li>".$campos[$i]."</li>";
-                                    }
-                                }else{?>
-                                        <script type="text/javascript"> 
-                                        var opciones=confirm("estas seguro de agragar esta empresa?")
-                                           if (opciones==true){ <?php
-                                                $agregar="INSERT INTO empresa 
-                                                (nit, nombre, direccion, correo_empresa, telefono, celular, usuario_creo, fecha_creo) VALUES
-                                                ('$_POST[nit]','$_POST[nombre]','$_POST[direccion]','$_POST[correo]','$_POST[telefono]',
-                                                '$_POST[celular]','$_SESSION[user]','$fecha_actual')";
-                                                $resultado=mysqli_query($con,$agregar);?>
-
-                                               window.location.href="http://localhost/shop_of_points/html/administrador.php";
-                                            }else{
-                                                window.location.href="http://localhost/shop_of_points/html/agregar_empresa.php"
-                                            }
-                                        </script>
-                                        <?php
-                                        }
-                                }
-                            ?>
                     <div class="row g-3">
                         <div class="col-md-6 d-flex align-items-center flex-row-reverse">
 
-                            <input type="text" id="nit" class="form-control" placeholder="NIT" name="nit">
+                            <input type="number" id="nit" class="form-control" placeholder="NIT" name="nit">
                             <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor"
                                 class="bi bi-box-arrow-in-up-right" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd"
@@ -166,7 +115,7 @@
                         </div>
 
                         <div class="col-md-6 d-flex align-items-center flex-row-reverse">
-                            <input type="text" id="Company" class="form-control" placeholder="Company" name="nombre">
+                            <input type="text" id="nombre" class="form-control" placeholder="Company" name="nombre">
                             <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor"
                                 class="bi bi-building-add" viewBox="0 0 16 16">
                                 <path
@@ -179,14 +128,14 @@
                         </div>
 
                         <div class="mb-2 d-flex align-items-center flex-row-reverse">
-                            <input type="text" class="form-control" placeholder="Dirección de la empresa" name="direccion">
+                            <input type="text" class="form-control" placeholder="Dirección de la empresa" name="direccion" id="direccion">
                             <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
                                 <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5Z"/>
                               </svg>
                         </div>
 
                         <div class="mb-2 d-flex align-items-center flex-row-reverse">
-                            <input type="text" class="form-control" placeholder="Ingrese un email valido" name="correo">
+                            <input type="text" class="form-control" placeholder="Ingrese un email valido" name="correo" id="correo">
                             <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor"
                                 class="bi bi-envelope-at" viewBox="0 0 16 16">
                                 <path
@@ -197,14 +146,14 @@
                         </div>
 
                         <div class=" col-md-6 d-flex align-items-center flex-row-reverse">
-                            <input type="text" class="form-control" placeholder="Telefono" name="telefono">
+                            <input type="text" class="form-control" placeholder="Telefono" name="telefono" id="telefono">
                             <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
                               </svg>
                         </div>
 
                         <div class=" col-md-6  d-flex align-items-center flex-row-reverse">
-                            <input type="text" class="form-control" placeholder="Celular" name="celular">
+                            <input type="text" class="form-control" placeholder="Celular" name="celular" id="celular">
                             <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor"
                                 class="bi bi-phone" viewBox="0 0 16 16">
                                 <path
@@ -216,7 +165,7 @@
                     </div>
                     <br>
                     <div class="d-grid">
-                        <button type="submit" class="btn">Enviar</button>
+                        <button type="button" class="btn" onclick="insertarEmpresa()">Enviar</button>
                     </div>
 
 
@@ -232,6 +181,14 @@
          contenedor.style.opacity= '0';
          }
      </script>
+     <script type="text/javascript" src="../jquery/jquery.js"></script>
+     <script type="text/javascript" src="../jquery/jquery.validate.js"></script>
+     <script type="text/javascript" src="../js/empresa.js"></script>
+     <!-- jQuery UI 1.11.4 -->
+     <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+     <!-- jQuery 2.2.3 -->
+     <script src="../jquery/jquery-2.2.3.min.js"></script>
+
 </body>
 
 </html>
