@@ -233,7 +233,7 @@
                                 </svg>
                             </div>
                             <div class="d-grid">
-                        <button type="submit" class="btn"> Enviar</button>
+                        <button type="submit" class="btn colorverde"> Enviar</button>
                     </div>
                         </div>
 

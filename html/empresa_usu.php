@@ -162,7 +162,7 @@
                                     <path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z"/>
                                     </svg>
                                 </button>
-                                <button class="btn btn-sm btn-success">
+                                <button class="btn btn-sm btn-success seleccionar">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
                                     <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
                                     </svg>
@@ -193,7 +193,7 @@
                                             <path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z"/>
                                             </svg>
                                         </button>
-                                        <button class="btn btn-sm btn-success">
+                                        <button class="btn btn-sm btn-success seleccionar">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
                                             <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
                                             </svg>
@@ -228,7 +228,7 @@
                                             </svg>
                                         </button>
 
-                                        <button class="btn btn-sm btn-success">
+                                        <button class="btn btn-sm btn-success seleccionar">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
                                           <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
                                             </svg>
@@ -244,92 +244,41 @@
     
 <!--formulario de actualización-->
     <div class="formulario top translate" id="actualizar">
-        <form class="form-control w-50" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?> " method="post">
-            <h1 class="text-center">Actualizacion de empresa</h1><?php
-            date_default_timezone_set('America/Bogota');
-            $fecha_actual = date("Y-m-d h:i:s");
-            if(isset($_POST["empresa_nit"])){
-                
-                $campos=array();
-                if($_POST['empresa_nit']==''){
-                    array_push($campos, "el campo nit no puede estar vacio");
-                }
-                if($_POST['empresa_nombre']==''){
-                    array_push($campos, "el campo nombre no puede estar vacio");
-                }
-                if($_POST['empresa_direccion']==''){
-                    array_push($campos, "el campo direccion no puede estar vacio");
-                }
-                if($_POST['empresa_correo']==''|| strpos($_POST['empresa_correo'],"@")=== false){
-                    array_push($campos, "Ingresa un correo electronico valido");
-                }
-                if($_POST['empresa_celular']=='' || strlen($_POST['empresa_celular']==10)){
-                    array_push($campos, "Ingresa un numero de celular valido");}
-                
-                if (count($campos)>0){
-                    echo "<div class='error'>";
-                    for($i=0; $i < count($campos); $i++){
-                        echo "<li>".$campos[$i]."</li>";
-                    }
-                }else{ 
-                    $actualizar="UPDATE empresa c 
-                    set c.nit='$_POST[empresa_nit]', c.nombre='$_POST[empresa_nombre]', 
-                    c.direccion='$_POST[empresa_direccion]', c.correo_empresa='$_POST[empresa_correo]', 
-                    c.celular='$_POST[empresa_celular]', c.telefono='$_POST[empresa_telefono]', c.usuario_actualizo='$_SESSION[user]',
-                    c.fecha_actualizo='$fecha_actual' WHERE c.nit='$_POST[empresa_nit]' ";
-                    $resultado=mysqli_query($con,$actualizar);
-                    if ($resultado){
-                        ?>
-                        <script type="text/javascript"> 
-                        var opciones=confirm("se ha actualizado los datos de la empresa correctamente")
-                           if (opciones==true){ 
-                               window.location.href="http://localhost/shop_of_points/html/empresa_usu.php";
-                            }else{
-                                window.location.href="http://localhost/shop_of_points/html/empresa_usu.php"
-                            }
-                        </script>
-                        <?php
-                        }
-                        else{
-                            echo"OCURRIO UN ERROR AL AGREGAR LA EMPRESA PORFAVOR VUELVA A INTENTARLO ";
-                        }
-                }
-            }else{
-            
-            ?>
+        <form class="form-control w-50" id="form" name="form" enctype="multipart/form-data" method="post">
+            <h1 class="text-center">Actualizacion de empresa</h1>
             <div class=" form-control border-white">
                 <label for="">nit</label>
-                <input type="text" class="form-control w-90 act" value="" name="empresa_nit" >
+                <input type="text" class="form-control w-90 act" value="" name="empresa_nit" id="nit" >
             </div>
 
             <div class="form-control border-white text-align-center">
                 <label for="">nombre</label>
-                <input type="text" class="form-control w-90 act" name="empresa_nombre">
+                <input type="text" class="form-control w-90 act" name="empresa_nombre" id="nombre">
             </div>
 
             <div class="form-control border-white">
                 <label for="">Direccion :</label>
-                <input type="text" class="form-control w-90 act" name="empresa_direccion">
+                <input type="text" class="form-control w-90 act" name="empresa_direccion" id="direccion" >
             </div>
 
             <div class="form-control border-white">
                 <label for="">Correo :</label>
-                <input type="text" class="form-control w-90 act" name="empresa_correo">
+                <input type="text" class="form-control w-90 act" name="empresa_correo" id="correo" >
             </div>
 
             <div class="form-control border-white d-flex justify-content-evenly">
                 <label for="">Celular :</label>
-                <input type="number" class="form-control w-25 act" name="empresa_celular">
+                <input type="number" class="form-control w-25 act" name="empresa_celular" id="celular" >
 
                 <label for="">telefono :</label>
-                <input type="number" class="form-control w-25 act" name="empresa_telefono">
+                <input type="number" class="form-control w-25 act" name="empresa_telefono" id="telefono" >
             </div>
             
 
             <div class="form-control border-white">|
-                <button class="btn btn-primary">Guardar</button>
+                <button  type="button" class="btn btn-primary" onclick="actualizarEmpresa()" >Guardar</button>
             </div>
-        </form><?php } ?>
+        </form>
         <button class=" position-absolute btn cerrar">close</button>
     </div>
 
@@ -396,7 +345,7 @@ window.addEventListener("click", (e) => {
   count=0
   }
 
-  if (e.target.matches(".btn-success")) {
+  if (e.target.matches(".seleccionar")) {
             
     let data = e.target.parentElement.parentElement.children;
     fillData1(data);
@@ -427,6 +376,7 @@ const fillData1 = (data) => {
     <script type="text/javascript" src="../jquery/jquery.validate.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../js/cerrarseccion.js"></script>
+    <script src="../js/updateempresa.js"></script>
     <!-- jQuery UI 1.11.4 -->
     <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
     <!-- jQuery 2.2.3 -->

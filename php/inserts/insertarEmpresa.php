@@ -1,5 +1,6 @@
 <?php
-    include('../conecxion.php');
+require_once('../validate_session.php');
+require_once('../conecxion.php');
     date_default_timezone_set('America/Bogota');
     $fecha_actual = date("Y-m-d h:i:s");
     $agregar="INSERT INTO empresa 
