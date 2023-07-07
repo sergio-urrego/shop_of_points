@@ -62,7 +62,7 @@
                             <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
                             <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
                           </svg>
-                          <span class="fondo-verde">usuario</span>
+                          <span class="fondo-verde">agregar suario</span>
                     </a>
                 </li>
                 <li>
@@ -102,15 +102,7 @@
                         <span class="fondo-amarillo">comentario</span>
                     </a>
                 </li> -->
-                <li>
-                    <a href="../html/empresa_usu.php" >
-                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="466" fill="currentColor" class="bi bi-check2-circle" viewBox="0 0 16 16">
-                            <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z"/>
-                            <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z"/>
-                          </svg>
-                          <span class="fondo-violeta" >select_Empresa</span>
-                    </a>
-                </li>
+                
 
                 <li>
                     <a href="#" title="">
@@ -122,7 +114,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="http://localhost/shop_of_points/php/cerrar_seccion.php" >
+                    <a href="#" type="button" onclick="cerrarseccion()"  >
                         <svg xmlns="http://www.w3.org/2000/svg" width="36" height="46" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
                             <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
                             <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
@@ -179,5 +171,13 @@
     contenedor.style.opacity= '0';
     }
 </script>
+    <script type="text/javascript" src="../jquery/jquery.js"></script>
+    <script type="text/javascript" src="../jquery/jquery.validate.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/cerrarseccion.js"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+    <!-- jQuery 2.2.3 -->
+    <script src="../jquery/jquery-2.2.3.min.js"></script>
 </body>
 </html>
