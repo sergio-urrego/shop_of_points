@@ -1,19 +1,51 @@
 function insertarEmpresa(){
     if(this.validarCamposFormularioInsertarEmpresa()){
         let form= $("#form").serialize();
-        if(confirm("Desea registrar una nueva empresa?")){
-            $.post('../php/inserts/insertarEmpresa.php',form,  
-            function(){
-                //window.location='www.google.com';
-                $("#nit").val(''); 
-                $("#nombre").val(''); 
-                $("#direccion").val(''); 
-                $("#correo").val(''); 
-                $("#celular").val(''); 
-                $("#telefono").val('');
+        const swalWithBootstrapButtons = Swal.mixin({
+            customClass: {
+              confirmButton: 'btn btn-success',
+              cancelButton: 'btn btn-danger',
+            },
+            buttonsStyling: false
+          })
+          
+          swalWithBootstrapButtons.fire({
+            title: 'Deseas agregar esta empresa?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'si, agregar',
+            cancelButtonText: 'No, cancelar!',
+            reverseButtons: true
+          }).then((result) => {
+            if (result.isConfirmed) {
+                $.post('../php/inserts/insertarEmpresa.php',form,  
+                function(){
+                    //window.location='www.google.com';
+                    $("#nit").val(''); 
+                    $("#nombre").val(''); 
+                    $("#direccion").val(''); 
+                    $("#correo").val(''); 
+                    $("#celular").val(''); 
+                    $("#telefono").val('');
+                }
+                );    
+              swalWithBootstrapButtons.fire(
+                'agregado!',
+                'la empresa  a sido agregada.',
+                'success'
+              )
+            } else if (
+              /* Read more about handling dismissals below */
+              result.dismiss === Swal.DismissReason.cancel
+            ) {
+              swalWithBootstrapButtons.fire(
+                'Cancelado',
+                'no se ah agregado empresa alguna',
+                'error'
+              )
             }
-          );
-        }
+          })
     }
 }
 

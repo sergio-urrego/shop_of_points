@@ -183,6 +183,7 @@
      </script>
      <script type="text/javascript" src="../jquery/jquery.js"></script>
      <script type="text/javascript" src="../jquery/jquery.validate.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
      <script type="text/javascript" src="../js/empresa.js"></script>
      <!-- jQuery UI 1.11.4 -->
      <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
