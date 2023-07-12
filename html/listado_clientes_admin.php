@@ -53,24 +53,25 @@
              </ul>
  
              <ul class="ul-enlaces">
-                 <!-- <li> esto es lo de consultar usuarios
-                     <a href="/html/consultas_usuarios.html" title="">
-                         <svg xmlns="http://www.w3.org/2000/svg" width="36" height="46" fill="currentColor" class="bi bi-file-earmark-person" viewBox="0 0 16 16">
-                             <path d="M11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
-                             <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2v9.255S12 12 8 12s-5 1.755-5 1.755V2a1 1 0 0 1 1-1h5.5v2z"/>
-                         </svg>
-                       <span class="fondo-rojo">usuarios</span>
-                     </a>
-                 </li> -->
                  <li>
-                    <a href="../html/agregar_usuario_admin.php" title="">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="46" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
-                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-                            <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-                          </svg>
-                          <span class="fondo-verde">usuario</span>
-                    </a>
-                </li>
+                     <a href="../html/agregar_usuario_admin.php" title="">
+                         <svg xmlns="http://www.w3.org/2000/svg" width="36" height="46" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
+                             <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                             <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                            </svg>
+                            <span class="fondo-verde">usuario</span>
+                        </a>
+                    </li>
+                    
+                    <li> 
+                        <a href="../html/listado_clientes_admin.php" title="">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="46" fill="currentColor" class="bi bi-file-earmark-person" viewBox="0 0 16 16">
+                                <path d="M11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                                <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2v9.255S12 12 8 12s-5 1.755-5 1.755V2a1 1 0 0 1 1-1h5.5v2z"/>
+                            </svg>
+                          <span class="fondo-rojo">usuarios</span>
+                        </a>
+                    </li> 
  
                  <li>
                      <a href="#" title="">
@@ -152,7 +153,7 @@
                                 <path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z"/>
                               </svg>
                             </button>
-                            <button class="btn btn-sm btn-success">
+                            <button class="btn btn-sm btn-success seleccionar">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
                                     <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
                                     </svg>
@@ -181,7 +182,7 @@
                                 <path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z"/>
                               </svg>
                             </button>
-                            <button class="btn btn-sm btn-success">
+                            <button class="btn btn-sm btn-success seleccionar">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
                                     <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
                                     </svg>
@@ -213,7 +214,7 @@
                                 <path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z"/>
                               </svg>
                             </button>
-                            <button class="btn btn-sm btn-success">
+                            <button class="btn btn-sm btn-success seleccionar">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
                                     <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
                                     </svg>
@@ -222,98 +223,71 @@
                             </tr><?php }
                         }}?>
                 </tbody>
-                <!-- <tbody class="icono">
-                    <tr>
-                        <td>1</td>
-                        <td>Karla Alejadra</td>
-                        <td>Manzana D</td>
-                        <td>123456789</td>
-                        <td>rojas@gmail.com</td>
-                        <td>
-                            <button class="btn btn-sm btn-danger"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16" >
-                                <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z"/>
-                            </svg>
-                            </button>
-                            <button class="btn btn-sm btn-warning"><svg  xmlns= "http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-fill" viewBox="0 0 16 16">
-                                <path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z"/>
-                              </svg>
-                            </button>
-                            <button class="btn btn-sm btn-success">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
-                                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
-                                    </svg>
-                            </button>
-                        </td>
-                    </tr>
-                </tbody> -->
             </table>
         </section>
     
 <!--formulario de actualización-->
     <div class="formulario top translate" id="actualizar">
-        <form class="form-control w-50">
+        <form id="actualizacion" name="actualizacion"  class="form-control w-50" enctype="multipart/form-data" method="post">
             <h1 class="text-center">Actalizacion de Usuarios</h1>
             <div class=" form-control border-white">
                 <label for="">Cedula</label>
-                <input type="text" class="form-control w-90 act" value="" name="empresa_nit" >
+                <input type="number" class="form-control w-90 act" value="" name="cedula" id="cedula" >
             </div>
 
             <div class="form-control border-white text-align-center">
                 <label for="">Nombre</label>
-                <input type="text" class="form-control w-90 act" name="Usuario_nombre">
+                <input type="text" class="form-control w-90 act" id="nombre" name="nombre" >
             </div>
 
             <div class="form-control border-white">
                 <label for="">Apellido :</label>
-                <input type="text" class="form-control w-90 act" name="Usuario_apellido">
+                <input type="text" class="form-control w-90 act" id="apellidos" name="apellidos" >
             </div>
 
             <div class="form-control border-white">
                 <label for="">Celular :</label>
-                <input type="text" class="form-control w-90 act" name="Usuario_celular">
+                <input type="number" class="form-control w-90 act" id="celular" name="celular" >
             </div>
 
-            <div class="form-control border-white d-flex justify-content-evenly">
+            <div class="form-control border-white ">
                 <label for="">Correo :</label>
-                <input type="number" class="form-control w-25 act" name="Usuario_correo">
+                <input type="email" class="form-control w-90 act" id="correo" name="correo" >
             </div>
-            
-
-
             <div class="form-control border-white">
-                <button class="btn btn-primary">Guardar</button>
+                <button type="button" class="btn btn-primary" onclick="actualizarusuariodesdeadmin()" >Guardar</button>
             </div>
         </form>
         <button class="position-absolute btn close">close</button>
     </div>
 
-    <!--Segundo Formulario-->
+    <!--Formulario para seleccionar-->
     <div class="consultas desplegar" id="consultar">
         <form class="form-control w-50">
             <h1 class="text-center">Consultar  Usuarios</h1>
             <div class=" form-control border-white">
                 <label for="">Cedula</label>
-                <input type="text" disabled class="form-control w-90" value="" name="Usuario_empresa" >
+                <input type="number" disabled class="form-control w-90 rellenar" value="" name="Usuario_empresa" >
             </div>
 
             <div class="form-control border-white text-align-center">
                 <label for="">Nombre</label>
-                <input type="text" disabled class="form-control w-90" name="nombre_usuario">
+                <input type="text" disabled class="form-control w-90 rellenar" name="nombre_usuario">
             </div>
 
             <div class="form-control border-white">
                 <label for="">Apellido  :</label>
-                <input type="text"disabled class="form-control w-90" name="usuario_Apellido">
+                <input type="text"disabled class="form-control w-90 rellenar" name="usuario_Apellido">
             </div>
 
             <div class="form-control border-white">
                 <label for="">Celular :</label>
-                <input type="text" disabled class="form-control w-90" name="Usuario_celular">
+                <input type="number" disabled class="form-control w-90 rellenar" name="Usuario_celular">
             </div>
 
-            <div class="form-control border-white d-flex justify-content-evenly">
+            <div class="form-control border-white ">
                 <label for="">Correo :</label>
-                <input type="number" disabled class="form-control w-25" name="Usuario_correo">
+                <input type="text" disabled class="form-control w-90 rellenar" name="Usuario_correo">
             </div>
             
             <div class="form-control border-white">
@@ -329,7 +303,7 @@
         const actualizar = document.getElementById("actualizar");
         const consultar = document.getElementById("consultar")
         const inputs = document.querySelectorAll(".act");
-        console.log(inputs);
+        const rellenar = document.querySelectorAll(".rellenar");
         let count = 0;
         
         window.addEventListener("click", (e)  => {
@@ -346,10 +320,10 @@
           count=0
           }
 
-          if (e.target.matches(".btn-success")) {
+          if (e.target.matches(".seleccionar")) {
             
             let data = e.target.parentElement.parentElement.children;
-            fillData(data);
+            fillData1(data);
             consultar.classList.toggle("desplegar");
           }
 
@@ -366,6 +340,11 @@
             count += 1;
           }
         };
+        const fillData1 = (data) => {
+        for (let index of rellenar ) {
+          index.value = data[count].textContent;
+          count += 1;
+        }};
 
     </script>
     </script>
@@ -373,6 +352,7 @@
     <script type="text/javascript" src="../jquery/jquery.validate.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../js/cerrarseccion.js"></script>
+    <script src="../js/updateusuario_admin.js"></script>
     <!-- jQuery UI 1.11.4 -->
     <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
     <!-- jQuery 2.2.3 -->
