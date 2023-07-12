@@ -1,6 +1,6 @@
 function iactualizarusuariodesdeadmin(){
     if(this.validarCamposFormularioupdateclienteadmin()){
-        let form= $("#form").serialize();
+        let form= $("#actualizacion").serialize();
         const swalWithBootstrapButtons = Swal.mixin({
             customClass: {
               confirmButton: 'btn btn-success',
@@ -10,29 +10,20 @@ function iactualizarusuariodesdeadmin(){
           })
           
           swalWithBootstrapButtons.fire({
-            title: 'Deseas agregar esta empresa?',
-            text: "You won't be able to revert this!",
+            title: 'Deseas actualizar el cliente de esta empresa?',
+            text: 'si le das "si", no hay vuelta atras!',
             icon: 'warning',
             showCancelButton: true,
-            confirmButtonText: 'si, agregar',
+            confirmButtonText: 'si, actualizar',
             cancelButtonText: 'No, cancelar!',
             reverseButtons: true
           }).then((result) => {
             if (result.isConfirmed) {
-                $.post('../php/inserts/insertarEmpresa.php',form,  
-                function(){
-                    //window.location='www.google.com';
-                    $("#nit").val(''); 
-                    $("#nombre").val(''); 
-                    $("#direccion").val(''); 
-                    $("#correo").val(''); 
-                    $("#celular").val(''); 
-                    $("#telefono").val('');
-                }
+                $.post('../php/update/updatecliente_admin.php',form,  
                 );    
               swalWithBootstrapButtons.fire(
-                'agregado!',
-                'la empresa  a sido agregada.',
+                'actualizado!',
+                'los datos del cliente se han actualizado.',
                 'success'
               )
             } else if (
@@ -41,7 +32,7 @@ function iactualizarusuariodesdeadmin(){
             ) {
               swalWithBootstrapButtons.fire(
                 'Cancelado',
-                'no se ah agregado empresa alguna',
+                'no se ah actualizado los datos del cliente',
                 'error'
               )
             }
@@ -51,8 +42,8 @@ function iactualizarusuariodesdeadmin(){
 
 function validarCamposFormularioupdateclienteadmin(){
     //
-    if($("#nit").val()=='' || $("#nit").val()==null ){
-        alert("el campo nit no puede estar vacío");
+    if($("#cedula").val()=='' || $("#nit").val()==null ){
+        alert("el campo cedula no puede estar vacío");
         return false;
     }
     //
@@ -61,10 +52,14 @@ function validarCamposFormularioupdateclienteadmin(){
         return false;
     }
     //
-    if($("#direccion").val()=='' || $("#direccion").val()==null ){
-        alert("el campo dirección no puede estar vacío");
+    if($("#apellidos").val()=='' || $("#direccion").val()==null ){
+        alert("el campo apellidos no puede estar vacío");
         return false;
     }
+    //
+    if($("#celular").val()=='' || $("#celular").val()==null ){
+        alert("el campo celular no puede estar vacío");
+        return false;
     //
     if($("#correo").val()=='' || $("#correo").val()==null ){
         alert("el campo correo no puede estar vacío");
@@ -80,9 +75,6 @@ function validarCamposFormularioupdateclienteadmin(){
         }
     }
     //
-    if($("#celular").val()=='' || $("#celular").val()==null ){
-        alert("el campo celular no puede estar vacío");
-        return false;
     }
     else {
       let celular = $("#celular").val();
