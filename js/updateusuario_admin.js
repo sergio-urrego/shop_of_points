@@ -1,4 +1,4 @@
-function iactualizarusuariodesdeadmin(){
+function actualizarusuariodesdeadmin(){
     if(this.validarCamposFormularioupdateclienteadmin()){
         let form= $("#actualizacion").serialize();
         const swalWithBootstrapButtons = Swal.mixin({
@@ -42,7 +42,7 @@ function iactualizarusuariodesdeadmin(){
 
 function validarCamposFormularioupdateclienteadmin(){
     //
-    if($("#cedula").val()=='' || $("#nit").val()==null ){
+    if($("#cedula").val()=='' || $("#cedula").val()==null ){
         alert("el campo cedula no puede estar vacío");
         return false;
     }
@@ -52,7 +52,7 @@ function validarCamposFormularioupdateclienteadmin(){
         return false;
     }
     //
-    if($("#apellidos").val()=='' || $("#direccion").val()==null ){
+    if($("#apellidos").val()=='' || $("#apellidos").val()==null ){
         alert("el campo apellidos no puede estar vacío");
         return false;
     }
@@ -60,7 +60,15 @@ function validarCamposFormularioupdateclienteadmin(){
     if($("#celular").val()=='' || $("#celular").val()==null ){
         alert("el campo celular no puede estar vacío");
         return false;
-    //
+    }
+    else {
+      let celular = $("#celular").val();
+      if (celular.length<9)
+        {
+            alert("ingrese un número de celular válido." + celular.length);
+            return false;
+        }
+    }
     if($("#correo").val()=='' || $("#correo").val()==null ){
         alert("el campo correo no puede estar vacío");
         return false;
@@ -75,14 +83,5 @@ function validarCamposFormularioupdateclienteadmin(){
         }
     }
     //
-    }
-    else {
-      let celular = $("#celular").val();
-      if (celular.length<9)
-        {
-            alert("ingrese un número de celular válido." + celular.length);
-            return false;
-        }
-    }
     return true;
 }
