@@ -4,15 +4,16 @@ require_once('../conecxion.php');
 date_default_timezone_set('America/Bogota');
 $fecha_actual = date("Y-m-d h:i:s");
 
-$actualizar="UPDATE c 
-set c.cedula='$_POST[cedula]', c.nombre='$_POST[nombre]', 
+$actualizar="UPDATE clientes c  
+INNER JOIN detalles_clientes dc   
+ON c.cedula = dc.cedula_cliente  
+SET c.cedula='$_POST[cedula]', c.nombre='$_POST[nombre]', 
 c.apellidos='$_POST[apellidos]', c.correo='$_POST[correo]', 
-c.celular='$_POST[celular]', c.usuario_actualizo='$_SESSION[user]',
-c.fecha_actualizo='$fecha_actual' from detalles_clientes dc inner join clientes c on c.cedula=.cd.cedula_cliente WHERE dc.nit='$_SESSION[select_empresa]' ";
+c.celular='$_POST[celular]', c.usuario_actualizo='$_SESSION[user]',c.fecha_actualizacion='$fecha_actual' 
+WHERE dc.nit_empresa='$_SESSION[select_empresa]' and c.cedula='$_POST[cedula]'";
 $resultado=mysqli_query($con,$actualizar);
-echo $actualizar;
-if ($resultado){
-    echo "entro";
-}
+echo $actualizar
+
+
 
 ?>

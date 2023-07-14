@@ -228,7 +228,7 @@
     
 <!--formulario de actualización-->
     <div class="formulario top translate" id="actualizar">
-        <form class="form-control w-50" id="form" name="form" enctype="multipart/form-data" method="post">
+        <form class="form-control w-50" id="form" name="form"  enctype="multipart/form-data" method="post">
             <h1 class="text-center">Actalizacion de Usuarios</h1>
             <div class=" form-control border-white">
                 <label for="">Cedula</label>
