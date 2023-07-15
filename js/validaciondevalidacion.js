@@ -1,7 +1,27 @@
 function valirdarlogin(){
     if(this.validarCamposFormulariovalidacion()){
         let form= $("#form").serialize();
-        $.post('../php/validacion.php',form,);          
+        const swalWithBootstrapButtons = Swal.mixin({
+            customClass: {
+              confirmButton: 'btn btn-success',
+              cancelButton: 'btn btn-danger',
+            },
+            buttonsStyling: false
+          })
+          
+          swalWithBootstrapButtons.fire({
+            title: 'BIENVENIDO !',
+            text: "Deseas continuar?",
+            icon: 'success',
+            showCancelButton: true,
+            confirmButtonText: 'si, continuar',
+            cancelButtonText: 'No, cancelar!',
+            reverseButtons: true
+          }).then((result) => {
+            if (result.isConfirmed) {
+                $.post('../php/validacion.php',form,);    
+            }
+          })
     }
 }
 
@@ -23,9 +43,6 @@ function validarCamposFormulariovalidacion(){
             text: 'el campo contraseña no puede estar vacio!',
           })
         return false;
-        return false;
-    }
-    //
-    
+    } 
     return true;
 }
