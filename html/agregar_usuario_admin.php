@@ -203,7 +203,6 @@
          contenedor.style.opacity= '0';
          }
      </script>
-     </script>
     <script type="text/javascript" src="../jquery/jquery.js"></script>
     <script type="text/javascript" src="../jquery/jquery.validate.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

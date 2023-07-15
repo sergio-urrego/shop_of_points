@@ -1,8 +1,11 @@
 function valirdarlogin(){
-
+    if(this.validarCamposFormulariovalidacion()){
+        let form= $("#form").serialize();
+        $.post('../php/validacion.php',form,);          
+    }
 }
 
-function validarCamposFormularioInsertarEmpresa(){
+function validarCamposFormulariovalidacion(){
     //
     if($("#cedula").val()=='' || $("#cedula").val()==null ){
         Swal.fire({
