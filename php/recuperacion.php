@@ -2,11 +2,12 @@
 require_once('../php/conecxion.php');
 session_start();
 
+
 $solicitud=$_SESSION['correo'];
 $cedula=$_SESSION['user'];
 $empresa=$_SESSION['empresa'];
 
-$consulta="SELECT * FROM usuario WHERE correo='$solicitud' and cedula='$cedula' and codigo_empresa='$empresa' " ;
+$consulta="SELECT cedula, correo, nit_empresa FROM usuario WHERE correo='$solicitud' and cedula='$cedula' and nit_empresa='$empresa' " ;
 $resultado=mysqli_query($con,$consulta);
 
 
@@ -17,14 +18,14 @@ $resultadocliente=mysqli_query($con,$consultacliente);
 
 if ($resultado){
     session_start();
-    $_SESSION['user']=$cedula;
+    $_SESSION['usuario']=$cedula;
     $_SESSION['usuario'];
     header("location:http://localhost/shop_of_points/html/actualizacion.php");
 
 }
-else if ($resultadocliente){ 
+if ($resultadocliente){ 
     session_start();
-    $_SESSION['user']=$cedula;
+    $_SESSION['usuariocliente']=$cedula;
     $_SESSION['cliente']=$empresa;
     header("location:http://localhost/shop_of_points/html/actualizacion.php");
     

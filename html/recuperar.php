@@ -26,7 +26,7 @@
                 if($_POST['correo']==''|| strpos($_POST['correo'],"@")=== false){
                     array_push($campos, "Ingresa un correo electronico valido");
                 }
-                if($_POST['empresa']=='0'){
+                if($_POST['empresa']==""){
                     array_push($campos, "debe seleccionar la empresa a la que corresponda restaurar la contraseña");
                 }
                 
@@ -52,7 +52,7 @@
             </div>
             <div class="my-3">
                 <select id="inputState" name="empresa" class="form-control">
-                    <option value="0">seleccione la empresa</option>
+                    <option value="">seleccione la empresa</option>
                     <?php
                     require_once('../php/conecxion.php');
                     $empresa="SELECT * FROM empresa";

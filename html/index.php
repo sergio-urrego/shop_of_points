@@ -25,18 +25,18 @@
                 </div>
                 
                 <div class="col">
-                    <form class="col-12" id="form" name="form"  method="post">
+                    <form class="col-12" id="form" name="form" enctype="multipart/form-data" method="post">
                         <div class="mb-4">
                             <label for=""> Usuario</label>
-                            <input type="text" id="cedula" class="form-control" placeholder="Ingrese su numero de cedula" name="cedula">
+                            <input type="text"  class="form-control" placeholder="Ingrese su numero de cedula" name="cedula" id="cedula">
                         </div>
                         <div class="mb-4">
                             <label for="" class="form-label">Contraseña</label>
-                            <input type="password" id="password" class="form-control" placeholder="Ingrese su Contraseña" name="contraseña">
+                            <input type="password" class="form-control" placeholder="Ingrese su Contraseña" name="contraseña" id="password">
                         </div>
                         <div class="my-3">
                             <label for="inputState"> Empresa </label>
-                            <select id="inputState" name="empresa" class="form-control">
+                            <select id="inputState" name="empresa" class="form-control" id="inputState" >
                                 <?php
                                 require_once('../php/conecxion.php');
                                 $empresa="SELECT * FROM empresa";
@@ -49,7 +49,7 @@
                             </select>
                         </div>
                         <div class="d-grid">
-                            <button type="button"  class="btn btn-success" onclick="valirdarlogin()" > Iniciar Sesión</button>
+                            <button type="button" class="btn btn-success" onclick="valirdarlogin()" >Iniciar Sesión</button>
                         </div>
 
                         <div class="my-3">
