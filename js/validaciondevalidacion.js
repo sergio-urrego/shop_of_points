@@ -19,7 +19,7 @@ function valirdarlogin(){
             reverseButtons: true
           }).then((result) => {
             if (result.isConfirmed) {
-                $.post('../php/validacion.php',form,);    
+              $.post('../php/validacion.php',form,);  
             }
           })
     }
