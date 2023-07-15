@@ -1,6 +1,6 @@
 function valirdarlogin(){
     if(this.validarCamposFormulariovalidacion()){
-        let form= $("#formulario").serialize();
+        let form= $("#form").serialize();
         const swalWithBootstrapButtons = Swal.mixin({
             customClass: {
               confirmButton: 'btn btn-success',

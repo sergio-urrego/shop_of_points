@@ -25,7 +25,7 @@
                 </div>
                 
                 <div class="col">
-                    <form class="col-12" id="form" name="formulario" enctype="multipart/form-data" method="post">
+                    <form class="col-12" id="form" name="form" enctype="multipart/form-data" method="post">
                         <div class="mb-4">
                             <label for=""> Usuario</label>
                             <input type="text" id="cedula" class="form-control" placeholder="Ingrese su numero de cedula" name="cedula">
