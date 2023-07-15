@@ -117,62 +117,12 @@
         <!--section -->
         <section class="seccion-header">
             <div class="container mt-5 align-items-center ">
-                <form id="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" class="form col-10 col-md-7" method="post">
+                <form id="form" class="form col-10 col-md-7" method="post">
                     <h2 class="fw-bold text-center ">Registro de Usuario</h2>
                     <br>
                     <div class="row g-3">
                         <div class=" col-md-6 d-flex align-items-center flex-row-reverse">
-                            <?php 
-                            date_default_timezone_set('America/Bogota');
-                            $fecha_actual = date("Y-m-d h:i:s");
-                            if(isset($_POST['nombre'])){
-                                $nombre=$_POST['nombre'];
-                                $apellidos=$_POST['apellidos'];
-                                $celular=$_POST['celular'];
-                                $gmail=$_POST['gmail'];
-                                $contraseña=$_POST['contraseña'];
-                                $clave=$_POST['clave'];
-                                $campos=array();
-
-                                if($nombre==''){
-                                    array_push($campos, "el campo nombre no puede estar vacio");
-                                }
-                                if($apellidos==''){
-                                    array_push($campos, "el campo apellidos no puede estar vacio");
-                                }
-                                if($celular==''){
-                                    array_push($campos, "el campo numero de celular no puede estar vacio");
-                                }
-
-                                if($gmail==''|| strpos($gmail,"@")=== false){
-                                    array_push($campos, "Ingresa un correo electronico valido");
-                                }
-
-                                if($contraseña==''){
-                                    array_push($campos, "el campo contraseña no puede estar vacio");
-                                }
-                                if($clave=''){
-                                    array_push($campos, "confirmen su contraseña");
-                                }
-                                if ($contraseña==$clave){
-                                    array_push($campos, "su contraseñas no coinciden ");
-
-                                }
-                                if (count($campos)>0){
-                                    echo "<div class='error'>";
-                                    for($i=0; $i < count($campos); $i++){
-                                        echo "<li>".$campos[$i]."</li></div>";
-                                    };
-                                }else{
-                                    // $agregarusuario="INSERT INTO clientes (cedula, nombre, apellidos, correo, celular, usuario_creo, fecha_creacion) VALUES('$_POST[nombre]','$_POST[apellidos]','$_POST[gmail]','$_POST[celular]','$_SESSION[user]','$fecha_actual')";
-                                    // $resultadocliente=mysql_query($con,$agregarusuario);
-                                    // $creacionclave="INSERT INTO detalles_clientes dc(clave) values('$_POST[contraseña]') inner join clientes c on c.cedula=dc.cedula_cliente where  c.cedula='' and dc.nit_empresa='' ";
-                                    
-                                    
-                                }
-                            }
-                            ?>
-                            <input type="text" class="form-control" placeholder="Nombre" name="nombre">
+                            <input type="text" class="form-control" placeholder="Nombre" id="nombre" name="nombre">
                             <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor"
                                 class="bi bi-person-add" viewBox="0 0 16 16">
                                 <path
@@ -182,7 +132,7 @@
                             </svg>
                         </div>
                         <div class="col-md-6 d-flex align-items-center flex-row-reverse">
-                            <input type="text" class="form-control" placeholder="Apellidos" name="apellidos">
+                            <input type="text" class="form-control" placeholder="Apellidos" id="apellidos" name="apellidos">
                             <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor"
                                 class="bi bi-person-add" viewBox="0 0 16 16">
                                 <path
@@ -193,7 +143,7 @@
                         </div>
 
                         <div class=" mb-2 d-flex align-items-center flex-row-reverse">
-                            <input type="text" class="form-control" placeholder="Celular" name="celular">
+                            <input type="text" class="form-control" placeholder="Celular" id="celular" name="celular">
                             <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor"
                                 class="bi bi-phone" viewBox="0 0 16 16">
                                 <path
@@ -202,7 +152,7 @@
                             </svg>
                         </div>
                         <div class="mb-2 d-flex align-items-center flex-row-reverse">
-                            <input type="text" class="form-control" placeholder="Ingrese un email valido" name="gmail">
+                            <input type="text" class="form-control" placeholder="Ingrese un email valido" id="gmail" name="gmail">
                             <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor"
                                 class="bi bi-envelope-at" viewBox="0 0 16 16">
                                 <path
@@ -214,7 +164,7 @@
 
                         <div class="row g-3 ">
                             <div class="col-md-6 d-flex align-items-center flex-row-reverse">
-                                <input type="password" id="password" class="form-control"
+                                <input type="password" id="contraseña" class="form-control"
                                     placeholder="Ingrese su Contraseña" name="contraseña">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor"
                                     class="bi bi-key" viewBox="0 0 16 16">
@@ -224,7 +174,7 @@
                                 </svg>
                             </div>
                             <div class="col-md-6 d-flex align-items-center flex-row-reverse">
-                                <input type="password" id="password" class="form-control"
+                                <input type="password" id="clave" class="form-control"
                                     placeholder="Confirme su Contraseña" name="clave">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor"
                                     class="bi bi-key-fill" viewBox="0 0 16 16">
@@ -233,7 +183,7 @@
                                 </svg>
                             </div>
                             <div class="d-grid">
-                        <button type="submit" class="btn colorverde"> Enviar</button>
+                        <button type="button" class="btn colorverde" onclick="insertarclientedesdeadmin()">agregar</button>
                     </div>
                         </div>
 
