@@ -25,7 +25,7 @@
                 </div>
                 
                 <div class="col">
-                    <form class="col-12" id="form" name="form" enctype="multipart/form-data" method="post">
+                    <form class="col-12" id="form" name="form" action="../php/validacion.php" method="post">
                         <div class="mb-4">
                             <label for=""> Usuario</label>
                             <input type="text"  class="form-control" placeholder="Ingrese su numero de cedula" name="cedula" id="cedula">
@@ -49,7 +49,7 @@
                             </select>
                         </div>
                         <div class="d-grid">
-                            <button type="button" class="btn btn-success" onclick="valirdarlogin()" >Iniciar Sesión</button>
+                            <button type="submit" class="btn btn-success">Iniciar Sesión</button>
                         </div>
 
                         <div class="my-3">
