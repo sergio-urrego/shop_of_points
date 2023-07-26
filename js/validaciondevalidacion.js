@@ -19,7 +19,9 @@ function valirdarlogin(){
             reverseButtons: true
           }).then((result) => {
             if (result.isConfirmed) {
-              $.post('../php/validacion.php',form,);  
+              alert("entro en el si ")
+              $.post('../php/actualizar_contraseña.php',form,function(){});  
+              
             }
           })
     }

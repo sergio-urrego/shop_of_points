@@ -28,12 +28,14 @@ function insertarEmpresa(){
                     $("#correo").val(''); 
                     $("#celular").val(''); 
                     $("#telefono").val('');
+                    $("#porcentaje").val('');
+                    $("#tope").val('');
                 }
                 );    
               swalWithBootstrapButtons.fire(
                 'agregado!',
                 'la empresa  a sido agregada.',
-                'success'
+                'success',
               )
             } else if (
               /* Read more about handling dismissals below */
@@ -91,6 +93,16 @@ function validarCamposFormularioInsertarEmpresa(){
             alert("ingrese un número de celular válido." + celular.length);
             return false;
         }
+    }
+    //
+    if($("#porcentaje").val()=='' || $("#porcentaje").val()==null ){
+      alert("el campo porcentaje no puede estar vacío");
+      return false;
+    }
+    //
+    if($("#tope").val()=='' || $("#tope").val()==null ){
+      alert("el campo tope no puede estar vacío");
+      return false;
     }
     
     return true;

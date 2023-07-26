@@ -21,7 +21,25 @@
         <div id="carga"></div>
     </div>
 
-    <header id="" class="">
+    <header id="header" class="contenedor-header">
+        <!--fondo animado-->
+       <div class="fondo-animado">
+           <span class="uno delay-1"></span>
+           <span class="dos"></span>  <!--el delay sirve para que los cubos vallan en distintas direcciones-->
+           <span class="tres delay-4"></span>
+           <span class="cuatro"></span>
+
+           <span class="uno delay-3"></span>
+           <span class="dos delay-7"></span>
+           <span class="tres delay-5"></span>
+           <span class="cuatro delay-4"></span>
+
+           <span class="uno"></span>
+           <span class="dos delay-2"></span>
+           <span class="tres delay-5"></span>
+           <span class="cuatro delay-3"></span>
+        
+        </div>
         
         <!--menu-->
         <nav class="menu">
@@ -142,8 +160,19 @@
                             </svg>
                         </div>
 
+                        <div class="mb-2 d-flex align-items-center flex-row-reverse">
+                            <input type="number" class="form-control" placeholder="Cédula" id="cedula" name="cedula">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-card-text"
+                                viewBox="0 0 16 16">
+                                <path
+                                    d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM1 0a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1H1z" />
+                                <path
+                                    d="M13 3H3a1 1 0 0 0-1 1v1h12V4a1 1 0 0 0-1-1zm0 2H3v1h10V5zM3 8h4a1 1 0 0 0 1-1V7h2a2 2 0 0 1 2 2v1h1a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-2a2 2 0 0 1 2-2zm6 0V7h2v1H9zm-6 4h8v2H3v-2z" />
+                            </svg>
+                        </div>
+
                         <div class=" mb-2 d-flex align-items-center flex-row-reverse">
-                            <input type="text" class="form-control" placeholder="Celular" id="celular" name="celular">
+                            <input type="number" class="form-control" placeholder="Celular" id="celular" name="celular">
                             <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor"
                                 class="bi bi-phone" viewBox="0 0 16 16">
                                 <path
@@ -152,7 +181,7 @@
                             </svg>
                         </div>
                         <div class="mb-2 d-flex align-items-center flex-row-reverse">
-                            <input type="text" class="form-control" placeholder="Ingrese un email valido" id="gmail" name="gmail">
+                            <input type="email" class="form-control" placeholder="Ingrese un email valido" id="correo" name="correo">
                             <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor"
                                 class="bi bi-envelope-at" viewBox="0 0 16 16">
                                 <path
@@ -162,8 +191,8 @@
                             </svg>
                         </div>
 
-                        <div class="row g-3 ">
-                            <div class="col-md-6 d-flex align-items-center flex-row-reverse">
+                        
+                        <div class="col-md-6 d-flex align-items-center flex-row-reverse">
                                 <input type="password" id="contraseña" class="form-control"
                                     placeholder="Ingrese su Contraseña" name="contraseña">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor"
@@ -172,19 +201,19 @@
                                         d="M0 8a4 4 0 0 1 7.465-2H14a.5.5 0 0 1 .354.146l1.5 1.5a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0L13 9.207l-.646.647a.5.5 0 0 1-.708 0L11 9.207l-.646.647a.5.5 0 0 1-.708 0L9 9.207l-.646.647A.5.5 0 0 1 8 10h-.535A4 4 0 0 1 0 8zm4-3a3 3 0 1 0 2.712 4.285A.5.5 0 0 1 7.163 9h.63l.853-.854a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.793-.793-1-1h-6.63a.5.5 0 0 1-.451-.285A3 3 0 0 0 4 5z" />
                                     <path d="M4 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
                                 </svg>
-                            </div>
-                            <div class="col-md-6 d-flex align-items-center flex-row-reverse">
-                                <input type="password" id="clave" class="form-control"
-                                    placeholder="Confirme su Contraseña" name="clave">
+                        </div>
+                        <div class="col-md-6 d-flex align-items-center flex-row-reverse">
+                                <input type="password" id="confirmar" class="form-control"
+                                    placeholder="Confirme su Contraseña" name="conformar">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor"
                                     class="bi bi-key-fill" viewBox="0 0 16 16">
                                     <path
                                         d="M3.5 11.5a3.5 3.5 0 1 1 3.163-5H14L15.5 8 14 9.5l-1-1-1 1-1-1-1 1-1-1-1 1H6.663a3.5 3.5 0 0 1-3.163 2zM2.5 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
                                 </svg>
-                            </div>
-                            <div class="d-grid">
-                        <button type="button" class="btn colorverde" onclick="insertarclientedesdeadmin()">agregar</button>
-                    </div>
+                        </div>
+
+                        <div class="d-grid">
+                                <button type="button" class="btn colorverde" onclick="insertarclientedesdeadmin()">agregar</button>
                         </div>
 
                     </div>
@@ -207,6 +236,7 @@
     <script type="text/javascript" src="../jquery/jquery.validate.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../js/cerrarseccion.js"></script>
+    <script src="../js/insertarcliente_admin.js"></script>
     <!-- jQuery UI 1.11.4 -->
     <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
     <!-- jQuery 2.2.3 -->

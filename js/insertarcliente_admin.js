@@ -1,5 +1,5 @@
 function insertarclientedesdeadmin(){
-    if(this.validarCamposFormularioInsertarEmpresa()){
+    if(this.validarCamposFormularioinsertarclientesdesdeadmin()){
         let form= $("#form").serialize();
         const swalWithBootstrapButtons = Swal.mixin({
             customClass: {
@@ -19,7 +19,7 @@ function insertarclientedesdeadmin(){
             reverseButtons: true
           }).then((result) => {
             if (result.isConfirmed) {
-                $.post('../php/inserts/insertarEmpresa.php',form,  
+                $.post('../php/inserts/insertarcliente_admin.php',form,  
                 function(){
                     //window.location='www.google.com';
                     $("#cedula").val(''); 
@@ -28,7 +28,7 @@ function insertarclientedesdeadmin(){
                     $("#correo").val(''); 
                     $("#celular").val(''); 
                     $("#contraseña").val('');
-                    $("#clave").val('');
+                    $("#confirmar").val('');
                 }
                 );    
               swalWithBootstrapButtons.fire(
@@ -50,20 +50,20 @@ function insertarclientedesdeadmin(){
     }
 }
 
-function validarCamposFormularioInsertarEmpresa(){
-    //
-    if($("#cedula").val()=='' || $("#cedula").val()==null ){
-        alert("el campo cedula no puede estar vacío");
-        return false;
-    }
+function validarCamposFormularioinsertarclientesdesdeadmin(){
     //
     if($("#nombre").val()=='' || $("#nombre").val()==null ){
-        alert("el campo nombre no puede estar vacío");
-        return false;
+      alert("el campo nombre no puede estar vacío");
+      return false;
     }
     //
     if($("#apellidos").val()=='' || $("#apellidos").val()==null ){
-        alert("el campo apellidos no puede estar vacío");
+      alert("el campo apellidos no puede estar vacío");
+      return false;
+    }
+    //
+    if($("#cedula").val()=='' || $("#cedula").val()==null ){
+        alert("el campo cedula no puede estar vacío");
         return false;
     }
     //
@@ -81,35 +81,34 @@ function validarCamposFormularioInsertarEmpresa(){
     }
     //
     if($("#correo").val()=='' || $("#correo").val()==null ){
-        alert("el campo correo no puede estar vacío");
-        return false;
-    }
-    else{
-        var correo = $("#correo").val();
-        var pattern = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i;
-        if(!pattern.test(correo))
-        {
-            alert('el correo ingresado no es correo válido');
-            return false;
-        }
-    }
+      alert("el campo correo no puede estar vacío");
+      return false;
+  }
+  else{
+      var correo = $("#correo").val();
+      var pattern = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i;
+      if(!pattern.test(correo))
+      {
+          alert('el correo ingresado no es correo válido');
+          return false;
+      }
+      }
 
     if($("#contraseña").val()=='' || $("#contraseña").val()==null ){
         alert("el campo contraseña no puede estar vacío");
         return false;
     }
 
-    if($("#clave").val()='' || $("#clave").val()==null ){
+    if($("#confirmar").val()=='' || $("#confirmar").val()==null ){
         alert("el campo confirmar contraseña no puede estar vacío");
         return false;
+    }else{ 
+      var contraseña=$("#contraseña").val();
+      var confirmar=$("#confirmar").val();
+      if(contraseña!==confirmar){
+          alert("las contraseñas deben ser iguales ");
+          return false;
+      }
     }
-
-    if($("#contraseña").val()=!$("#clave").val()){
-        alert("las contraseñas no coinsiden ");
-        return false;
-    }
-
-    
-    
     return true;
 }

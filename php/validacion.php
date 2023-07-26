@@ -6,8 +6,6 @@ $cedula=$_POST['cedula'];
 $contraseña=$_POST['contraseña'];
 $nitempresa=$_POST['empresa'];
 
-
-
 $consulta="SELECT * FROM usuario WHERE cedula='$cedula' and contraseña='$contraseña'" ;
 $resultado=mysqli_query($con,$consulta);
 $validacion=mysqli_num_rows($resultado);
@@ -27,7 +25,8 @@ if ($validacion>0){
 
             header("location:http://localhost/shop_of_points/html/administrador.php");
 
-        }else if($valor==10000 & $empresa==$nitempresa){
+        } 
+        if($valor==10000 & $empresa==$nitempresa){
             session_start();
             ob_start();
             $_SESSION['user']=$cedula;

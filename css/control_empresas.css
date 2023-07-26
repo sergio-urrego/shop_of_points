@@ -1,11 +1,97 @@
 *{
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
+    font-family:  sans-serif;
 }
 body{
-    background-color: #fff;
-    color: black;
-    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+    background-color: rgb(243, 237, 248); /*cente, cover*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+/*atributos de la tabla*/
+main.table{
+    width: 100%; /*sea mas grande*/
+    height: 80vh;
+    background-color: rgba(245, 242, 239, 0.892);
+    backdrop-filter: blur(7px); /*sobresale el cuadro de la tabla, retrato*/
+    box-shadow: 0 20px 40px #0005;
+    border-radius: 30px;
+    overflow: hidden;
+    margin-left: 50px;
+} 
+/*titulo usuarios*/ 
+.table__header{
+    width: 100%;
+    height: 10%;
+    background-color: rgba(138, 236, 0, 0.929);
+    padding: 10px; /*espacio de arriba, abjo*/
+    text-align: center;
+    justify-content: center;
+    
+}
+/*contenido barra*/
+.table__body{
+    width: 95%;
+    max-height: calc(89% - .20rem);
+    background-color: rgba(200, 202, 201, 0.733);
+    margin: 20px; /*que no toque con el titulo*/
+    border-radius: 15px;
+    overflow: auto; /*esquinas superiores*/
+    text-align: center;
+    margin-left: 33px;
+}
+/*.table__body::-webkit-scrollbar{
+    width: 0.5rem;
+    height: 0.5rem;
+}
+
+.table__body::-webkit-scrollbar-thumb{
+    border-radius: .5rem;
+    background-color: #0004;
+    visibility: hidden;
+}
+.table__body:hover:-webkit-scrollbar{
+    visibility: visible;
+}
+*/
+
+table, th, td{
+    border-collapse: collapse;/*se junta el color del menu*/
+    padding: 30px;  /*espacio */
+    margin-left: 35px;    
+}
+tbody tr td th {
+    justify-items: center;
+}
+
+/*estilo de los nombres del menu*/
+thead th{
+    position: sticky;
+    top: 0;
+    left:0;
+    background-color: #92908ffe;
+    margin-left: 10vh;
+    font-size: 20px;
+}
+
+/*aplicar estilos a la tabla*/
+tbody tr:nth-child(even) {
+    background-color: #0000000b;
+}
+tbody tr:hover {
+    background-color: rgba(166, 163, 163, 0.4); /*color cuando pasa el cursor */
+    cursor: pointer;
+}
+.tabla{
+    justify-content: center;
+    align-items: center;
+}
+
+/*menu*/
+
 ul{
     margin: 0;
     padding: 0;
@@ -15,7 +101,6 @@ a{
     color: #fff; /*color de la letra*/
     text-decoration: none;
 }
-
 
 /*fondos animado*/
 .fondo-animado{
@@ -42,19 +127,19 @@ span.uno {
     width: 100px;
     height: 100px;
     bottom: -100px; /*desplazamiento vertical*/
-    background-color: rgb(97, 89, 216);
+    background-color: rgb(23, 12, 189);
 }
 span.dos {
     width: 70px;
     height: 70px;
     bottom: -70px;
-    background-color: #ff5b00;
+    background-color: rgb(233, 57, 197);
 }
 span.tres {
     width: 50px;
     height: 50px;
     bottom: -50px;
-    background-color: #dcf600;
+    background-color: rgb(190, 20, 74);
 }
 span.cuatro {
     width: 20px;
@@ -144,7 +229,6 @@ span.delay-7 {
     animation-delay: 2s;
     animation-duration: 2s;
 }
-
 /*menuu*/
 .menu {
     position: absolute;
@@ -245,100 +329,85 @@ span.delay-7 {
     background-color: #22e12b;
 }
 .ul-enlaces a span.fondo-amarillo{
-    background-color: rgb(225, 203, 38);
+    background-color: #e1c705;
 }
 .ul-enlaces a span.fondo-rojo{
-    background-color: #ef0e0e;
+    background-color: #ea0808;
 }
 
-/*seccion del texto*/
-.seccion-header {
-    display: flex;
-    height: 100vh;
-    margin-right:500px;
-    align-items: center;
-    justify-content: center;
-    font-family:" Cooper Black";
-    text-shadow: 0 0 5px rgba(29, 28, 28, 0.5); /*sombra del texto* despla, tama*/
-    z-index: 5;
-}
-/*Formulario*/
-.container{
-    border: 8px;
-    margin: 100px;
-    padding: 35px;
-    
-    
-    
-}
-
-.form {
-    background-color: rgba(195, 196, 196, 0.608);
-    margin: auto;
-    border-radius: 8px;
-    padding: 20px 30px;
-    backdrop-filter: blur(7px); /*sobresale el cuadro de la tabla, retrato*/
-    box-shadow: 0 15px 25px rgba(92, 99, 105, 0.095);
-    justify-content: center;
-    font-family: 'Times New Roman', Times, serif;
-    margin-right: -35%;
-    width: 120%;
-    right: 120%;
-    
-}
-
-.colorverde{
-    background-color: rgba(0, 255, 8, 0.625);
-   
-}
-
-.colorverde:hover{
-    background-color: rgba(0, 255, 8, 0.766) ;
-}
-
-/*Criculo de carga*/
-*,*:after, *::before{
-    margin: 0;
-    padding: 0;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-#contenedor_carga{
-    background-color: white;
-    height: 100%;
-    width: 100%;
-    position: fixed;
-    -webkit-transition: all 3s ease;
-    -o-transition: all 3s ease;
-    transition: all 3s ease;
-    z-index: 10000; /*se posiciones los elementos*/
-}
-#carga{
-    border: 15px solid rgba(143, 139, 139, 0.79);
-    border-top-color: #7ff426; /*colores borde superior*/
-    border-top-style: groove ;
-    height: 100px;
-    width: 100px;
-    border-radius: 100%; /*circulos*/
-    
+/*barra de busqueda*/
+.container-fluid{
     position: absolute;
+    width: 40%;
+    top: 4px;
+    display: flex;
+    margin-left: 63%;
+    border-radius: 10px;
+}
+.container-fluid .btn{
+    background-color: #ff5b00;
+    color: white;
+}
+
+/*formulario de actualizacionn*/
+.top{
     top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    -webkit-animation: girar 1.5s linear infinite;
-    -o-animation: girar 1.5s linear infinite;
-    animation: girar 1.5s linear infinite;
+    height: 90vh;
+    background-color: rgba(46, 44, 44, 0.8);
+    display: grid;
+    place-items: center;
+    transition: .5s; /*tiempo que se desplega*/
+  }
+  .cerrar{
+    top: 3em;
+    left: 70%;
+  }
+  .translate{
+    transform: translateY(-100%);  /*se desplegara hacia abajo*/
+  }
+.formulario{
+    position: absolute;
+    width: 100%;
 }
-@keyframes girar{
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+
+.icono:hover svg {
+    transform: scale(1.5); /*el elemento se agrandara a un ancho y alto de 150 píxeles.*/
 }
 
+/*Segundo formulario*/
+.consultas{
+    position: absolute;
+    width: 100%;
+    top: 0;
+    height: 90vh;
+    background-color: rgba(46, 44, 44, 0.8);
+    display: grid; /*para centrar el formulario*/
+    place-items: center;
+    transition: .5s; /*tiempo que se desplega*/
+}
 
+.close{
+    top: 3em;
+    left: 70%;
+    background-color: red;
+}
+.close:hover{
+    background-color: red;
+}
+.desplegar{
+    transform: translateY(-100%);
+}
 
+.cerrar{
+    background-color: #ea0808;
+}
+.cerrar:hover{
+    background-color: #ea0808;
+}
+
+.color{
+    background-color:#4661fa;
+}
 
 
 
