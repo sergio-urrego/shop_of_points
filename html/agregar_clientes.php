@@ -12,7 +12,7 @@
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/agregar_usuario_admin.css">
+    <link rel="stylesheet" href="../css/agregar_clientes.css">
 </head>
 
 <body>
@@ -129,7 +129,7 @@
                     <br>
                     <div class="row g-3">
                         <div class=" col-md-6 d-flex align-items-center flex-row-reverse">
-                            <input type="text" class="form-control" placeholder="Nombre" id="nombre" name="nombre">
+                            <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Nombre" >
                             <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor"
                                 class="bi bi-person-add" viewBox="0 0 16 16">
                                 <path
@@ -139,7 +139,7 @@
                             </svg>
                         </div>
                         <div class="col-md-6 d-flex align-items-center flex-row-reverse">
-                            <input type="text" class="form-control" placeholder="Apellidos" id="apellidos" name="apellidos">
+                            <input type="text" id="apellidos" name="apellidos" class="form-control" placeholder="Apellidos" >
                             <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor"
                                 class="bi bi-person-add" viewBox="0 0 16 16">
                                 <path
@@ -150,7 +150,7 @@
                         </div>
 
                         <div class="mb-2 d-flex align-items-center flex-row-reverse">
-                            <input type="number" class="form-control" placeholder="Cédula" id="cedula" name="cedula">
+                            <input type="number" id="cedula" name="cedula" class="form-control" placeholder="Cédula" >
                             <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-card-text"
                                 viewBox="0 0 16 16">
                                 <path
@@ -161,7 +161,7 @@
                         </div>
 
                         <div class=" mb-2 d-flex align-items-center flex-row-reverse">
-                            <input type="number" class="form-control" placeholder="Celular" id="celular" name="celular">
+                            <input type="number" id="celular" name="celular" class="form-control" placeholder="Celular" >
                             <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor"
                                 class="bi bi-phone" viewBox="0 0 16 16">
                                 <path
@@ -170,7 +170,7 @@
                             </svg>
                         </div>
                         <div class="mb-2 d-flex align-items-center flex-row-reverse">
-                            <input type="email" class="form-control" placeholder="Ingrese un email valido" id="correo" name="correo">
+                            <input type="email" id="correo" name="correo" class="form-control" placeholder="Ingrese un email valido"  >
                             <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor"
                                 class="bi bi-envelope-at" viewBox="0 0 16 16">
                                 <path
@@ -182,8 +182,7 @@
 
                         
                         <div class="col-md-6 d-flex align-items-center flex-row-reverse">
-                                <input type="password" id="contraseña" class="form-control"
-                                    placeholder="Ingrese su Contraseña" name="contraseña">
+                                <input type="password" id="contraseña" name="contraseña" class="form-control" placeholder="Ingrese su Contraseña">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor"
                                     class="bi bi-key" viewBox="0 0 16 16">
                                     <path
@@ -192,8 +191,7 @@
                                 </svg>
                         </div>
                         <div class="col-md-6 d-flex align-items-center flex-row-reverse">
-                                <input type="password" id="confirmar" class="form-control"
-                                    placeholder="Confirme su Contraseña" name="conformar">
+                                <input type="password" id="confirmar" class="form-control" placeholder="Confirme su Contraseña" >
                                 <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor"
                                     class="bi bi-key-fill" viewBox="0 0 16 16">
                                     <path
@@ -202,7 +200,7 @@
                         </div>
 
                         <div class="d-grid">
-                                <button type="button" class="btn colorverde" onclick="insertarclientedesdeadmin()">agregar</button>
+                                <button type="button" class="btn colorverde" onclick="insertclientes()">agregar</button>
                         </div>
 
                     </div>
@@ -225,7 +223,7 @@
     <script type="text/javascript" src="../jquery/jquery.validate.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../js/cerrarseccion.js"></script>
-    <script src="../js/insertarcliente_admin.js"></script>
+    <script src="../js/insertar_clientes.js"></script>
     <!-- jQuery UI 1.11.4 -->
     <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
     <!-- jQuery 2.2.3 -->

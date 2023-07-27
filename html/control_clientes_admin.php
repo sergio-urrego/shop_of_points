@@ -50,36 +50,35 @@
      </ul>
 
      <ul class="ul-enlaces">
-     <li>
-                    <a href="../html/agregar_empresa.php" title="">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="46" fill="currentColor" class="bi bi-building-add" viewBox="0 0 16 16">
-                            <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0Z"/>
-                            <path d="M2 1a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v6.5a.5.5 0 0 1-1 0V1H3v14h3v-2.5a.5.5 0 0 1 .5-.5H8v4H3a1 1 0 0 1-1-1V1Z"/>
-                            <path d="M4.5 2a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Zm3 0a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Zm3 0a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Zm-6 3a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Zm3 0a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Zm3 0a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Zm-6 3a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Zm3 0a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Z"/>
-                        </svg>
-                        <span class="fondo-verde">empresa</span>
+
+                <li>
+                    <a href="../html/agregar_usuario_admin.php" title="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="46" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                            <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                          </svg>
+                          <span class="fondo-verde">agregar suario</span>
                     </a>
                 </li>
-                
                 <li>
-                    <a href="../html/empresa_usu.php" >
-                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="46" fill="currentColor" class="bi bi-check2-circle" viewBox="0 0 16 16">
-                            <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z"/>
-                            <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z"/>
-                          </svg>
-                          <span class="fondo-violeta" >select_Empresa</span>
+                    <a href="../html/listado_clientes_admin.php" >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="46" fill="currentColor" class="bi bi-clipboard2-check-fill" viewBox="0 0 16 16">
+                        <path d="M10 .5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5.5.5 0 0 1-.5.5.5.5 0 0 0-.5.5V2a.5.5 0 0 0 .5.5h5A.5.5 0 0 0 11 2v-.5a.5.5 0 0 0-.5-.5.5.5 0 0 1-.5-.5Z"/>
+                        <path d="M4.085 1H3.5A1.5 1.5 0 0 0 2 2.5v12A1.5 1.5 0 0 0 3.5 16h9a1.5 1.5 0 0 0 1.5-1.5v-12A1.5 1.5 0 0 0 12.5 1h-.585c.055.156.085.325.085.5V2a1.5 1.5 0 0 1-1.5 1.5h-5A1.5 1.5 0 0 1 4 2v-.5c0-.175.03-.344.085-.5Zm6.769 6.854-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708.708Z"/>
+                    </svg>
+                    <span class="fondo-rojo">usuarios</span>
                     </a>
                 </li>
 
                 <li>
-                    <a href="../html/control_ampresas_admin.php" title="">
+                    <a href="../html/control_clientes_admin.php" title="">
                         <svg xmlns="http://www.w3.org/2000/svg" width="36" height="46" fill="currentColor" class="bi bi-bar-chart-line" viewBox="0 0 16 16">
                             <path d="M11 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h1V7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7h1V2zm1 12h2V2h-2v12zm-3 0V7H7v7h2zm-5 0v-3H2v3h2z"/>
                         </svg>
-                        <span class="fondo-verde">Control</span>                         
+                        <span class="fondo-verde">control</span>                         
                     </a>
                 </li>
- 
+
                 <li>
                     <a href="#" title="">
                         <svg xmlns="http://www.w3.org/2000/svg" width="36" height="46" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
@@ -105,12 +104,12 @@
     <div class="row">
         <div class="col-8">
             <h1 class="espacio1">SHOP OF <b> POINST</b></h1>
-            <h2 class="decoracion espacio2">Control de empresas</h2>        
+            <h2 class="decoracion espacio2">Control de clientes</h2>        
 
             <div class="container3">
                 <div class="cuadro2" class="">
                     <?php 
-                        $consulta="SELECT * FROM empresa ";
+                        $consulta="SELECT * FROM detalles_clientes u  where u.nit_empresa='$_SESSION[select_empresa]'";
                         $resultado=mysqli_query($con,$consulta);
                         $validacion=mysqli_num_rows($resultado);
                         $cuenta=$validacion;
@@ -128,8 +127,8 @@
             <div class="container2">
                 <div class="cuadro">
                     <?php 
-                        $consulta="SELECT * FROM empresa WHERE usuario_borro is not null " ;
-                        $resultado=mysqli_query($con,$consulta);
+                        $consulta2="SELECT * FROM clientes c inner join  detalles_clientes u on c.cedula = u.cedula_cliente where u.usuario_borro is not null and c.usuario_borro is not null";
+                        $resultado=mysqli_query($con,$consulta2);
                         $validacion2=mysqli_num_rows($resultado);
                         $cuenta2=$validacion2;
                     ?>
@@ -161,7 +160,7 @@
                         </thead>
                         <tbody class="icono">
                         <?php
-                        $consulta="SELECT nit, nombre, correo_empresa FROM empresa WHERE  usuario_borro is not null";
+                        $consulta="SELECT * FROM clientes c inner join  detalles_clientes u on c.cedula = u.cedula_cliente where u.usuario_borro is not null and c.usuario_borro is not null";
                         $resultado=mysqli_query($con,$consulta);
                         while ($empresa=mysqli_fetch_array($resultado)){
                         ?>
