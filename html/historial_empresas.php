@@ -15,7 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Documen</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/empresa_usu.css">
+    <link rel="stylesheet" href="../css/historial_empresas.css">
 </head>
 <body>
     <header id="header" class="contenedor-header">
@@ -203,7 +203,7 @@
 
     <!--Segundo Formulario-->
     <div class="consultas desplegar" id="consultar">
-        <form class="form-control w-50" action="../html/ingresar_empresa.php" method="post">
+        <form class="form-control w-50" action="../html/historialinfo_administrador.php" method="post">
             <h1 class="text-center">Igresar empresa</h1>
             <div class=" form-control border-white">
                 <label for="">NIT</label>
@@ -217,7 +217,7 @@
 
             <div class="form-control border-white">
                 <label for="">Direccion :</label>
-                <input type="text" disabled class="form-control w-90 rell" name="empresa_direccion">
+                <input type="text" disabled class="form-control w-90 rell" name="empresa_direccion" >
             </div>
 
             <div class="form-control border-white">

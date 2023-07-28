@@ -19,7 +19,7 @@ function insertclientes(){
             reverseButtons: true
           }).then((result) => {
             if (result.isConfirmed) {
-                $.post('../php/inserts/insertclientes.php',form,  
+                $.post('../php/insertclientes.php',form,  
                 function(){
                     //window.location='www.google.com';
                     $("#nombre").val(''); 
