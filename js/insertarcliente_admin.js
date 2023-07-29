@@ -29,6 +29,7 @@ function insertarclientedesdeadmin(){
                     $("#celular").val(''); 
                     $("#contraseña").val('');
                     $("#confirmar").val('');
+                    $("#role").val('0');
                 }
                 );    
               swalWithBootstrapButtons.fire(
@@ -110,5 +111,9 @@ function validarCamposFormularioinsertarclientesdesdeadmin(){
           return false;
       }
     }
+    if($("#role").val()==0 || $("#role").val()==null || $("#role").val()=='' ){
+      alert("el debe seleccionar un perfil");
+      return false;
+  }
     return true;
 }

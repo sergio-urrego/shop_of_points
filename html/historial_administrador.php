@@ -150,8 +150,34 @@
             $fecha_actualizo='no se ah actualizado';
             $hora_actualizo='';        
         }
-        if($fecha_borro==null || $fecha_borro==''){
-            $fecha_borro='';        
+
+        //
+        if($fecha_borro!=null || $fecha_borro!=''){
+            function dividirFechaYHoraborro($fecha_borro) {
+                // Crear un objeto DateTime a partir de la fecha datetime proporcionada
+                $fechaHoraObj = new DateTime($fecha_borro);
+            
+                // Obtener la fecha y la hora como cadenas separadas
+                $fecha = $fechaHoraObj->format('Y-m-d'); // Formato: AAAA-MM-DD
+                $hora = $fechaHoraObj->format('H:i:s'); // Formato: HH:mm:ss
+            
+                // Retornar un arreglo asociativo con la fecha y la hora
+                return array(
+                    'fecha' => $fecha,
+                    'hora' => $hora
+                );
+            }
+            
+            // Ejemplo de uso
+            $resultado3 = dividirFechaYHoracreo($fecha_borro);
+            
+            $$fecha_borro=$resultado3['fecha'];
+            $hora_borro=$resultado3['hora'];
+            
+
+        }else if($fecha_borro==null || $$fecha_borro==''){
+            $$fecha_borro='';
+            $hora_actualizo='';        
         }
 
         function dividirFechaYHoracreo($fecha_creo) {
@@ -285,6 +311,13 @@
     <div class="tarjeta2 d-block align-items-center ">
         <h2 class="actualizacion ">Actualizacion </h2>
         <h2 class="actualizacion  ">de borrado:</h2>
+        <div class="container4">
+                    <span class="color_amarillo"> <b><?php echo  $nombre_actualizo ;?></b></span>
+                    </div>
+
+                    <span class="color_azul"><b>HORA:</b> <?php echo  $hora_actualizo ;?> </span>
+
+        
     <h2 class="borrado">
         <?php echo  $fecha_borro ;?>
     </h2>  

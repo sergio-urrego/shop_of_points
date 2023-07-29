@@ -585,6 +585,62 @@ h2{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     top: 3px;
 }
+/*para ocultar la hora*/
+.tarjeta2{
+    cursor: pointer;
+    position: absolute;
+}
+
+.tarjeta2 span{
+    padding:10px 25px;
+    border-radius: 9px;
+    transform: translatey(0) rotate(-80);
+    transition: all ease-in-out 100ms; 
+    opacity: 0; /*oculta el texto*/
+    color: black;
+    left: 0;
+    display: flex;
+    position: relative;
+    top: 30px;
+    margin-left: 285px;
+}
+.tarjeta2:hover span {
+    transform: translatey(0rem) rotate(0); /*traslación horizontal de 4 unidades rem al elemento*/
+    opacity: 1;
+
+}
+
+/*para ocultar el segundo span que es el nombre*/
+.container4{
+    cursor: pointer;
+}
+.container4 span{
+    padding:10px 25px;
+    border-radius: 9px;
+    transform: translatey(0) rotate(-80);
+    transition: all ease-in-out 100ms; 
+    opacity: 0; /*oculta el texto*/
+    color: black;
+    margin-left: 100px;
+    position: absolute; 
+    top: 0px;   
+    margin-left: 285px;
+}
+.container4:hover span {
+    transform: translatey(0rem) rotate(0); /*traslación horizontal de 4 unidades rem al elemento*/
+    opacity: 1;
+}
+/*color de los span*/
+.color_amarillo{
+        background-color: #f5dd0a;
+        width: 200px;
+}
+
+.color_azul{
+    background-color: #48afff;
+    height: 60px;
+    width: 200px;
+}
 
 .borrado{
     margin-left: 50px;
