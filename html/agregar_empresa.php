@@ -91,7 +91,7 @@
                 </li>
 
                 <li>
-                    <a href="#" title="">
+                    <a href="../html/historial_empresas.php" title="">
                         <svg xmlns="http://www.w3.org/2000/svg" width="36" height="46" fill="currentColor"
                             class="bi bi-pencil-square" viewBox="0 0 16 16">
                             <path

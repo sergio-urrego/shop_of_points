@@ -9,15 +9,15 @@ body{
     min-height: 70vh;
     background-color: rgb(243, 237, 248); /*cente, cover*/
     display: flex;
-    max-width:  100vh; ;
+    max-width: 10vh; 
 }
 /*atributos de la tabla*/
 /*titulo usuarios*/  
 .table__body{
-    width: 1100px;
+    width: 110%;
     max-height: calc(100% - .20rem);
-    background-color: rgba(231, 230, 223, 0.733);
-    margin: 20px; /*que no toque con el titulo*/
+    background-color: rgba(138, 138, 136, 0.733);
+    margin: 10px; /*que no toque con el titulo*/
     border-radius: 15px;
     overflow: auto; /*esquinas superiores*/
     margin-left: 100px;
@@ -25,14 +25,12 @@ body{
     font-size: 25px;
 }
 
-table td{
-    width: 200px; 
+table,th, td{
+    width: 1290px; 
+    text-align: center;
 }
-
-.bi-eye-fill,
-.bi-trash-fill{
-    margin-left: 20px;
-}
+.col-12{
+        width: 100%;}
 
 /*aplicar estilos a la tabla*/
 tbody tr:nth-child(even) {
@@ -47,13 +45,6 @@ td{
     border-collapse: collapse;/*se junta el color del menu*/
     padding: 15px;  /*espacio de las columnas */
     margin-left: 5px;
-}
-
-.status{
-    text-align: center;
-    color: #ec1212;
-    font-size: 35px;
-    
 }
 /*menu*/
 
@@ -352,7 +343,7 @@ span.delay-7 {
 }
 /*TEXTo centrado*/
 .subtitulo2{
-    margin-left: 600px;
+    margin-left: 550px;
     margin-top: 30px;
     @font-face {
         font-family: Mukta;
@@ -390,11 +381,19 @@ span.delay-7 {
     background-color: currentColor;
     top: 0.6em;
 }
+.subtitulo2::after {
+    content: '';
+    position: absolute;
+    width: 480px;
+    height: 3px;
+    background-color: currentColor;
+    top: 0.6em;
+}
 .subtitulo2::before{
-    left: -350px;
+    left: -400px;
 }
 .subtitulo2::after{
-    right: -350px;
+    right: -480px;
 }
 b.titulos{
     margin-left: 15px;
@@ -402,34 +401,9 @@ b.titulos{
 }
 /*texto donde dice empresa*/
 .empresa{
-    margin-left: 510px;
+    left: 910px;
     text-align: end;
     color: black;
-}
-/*emoji y codigo del nit de la empresa*/
-.nit_empresa{
-    width: 160px;
-    margin-left: 1290px;
-    position: absolute;
-    top: 300px;
-}
-/*color neon */
-.nit_empresa{
-    @font-face {
-        font-family: Mukta;
-        src: url('Mukta-regular.ttf');
-    }
-
-}
-
-.nit_empresa{
-    text-shadow: 0 0 25px #ff6401,
-    0 0 15px #ff6401,
-    0 0 20px #ff6401,
-    0 0 50px #ff6401;
-    font-family: 'Mukta';
-    letter-spacing: 1px;
-    cursor: pointer;
 }
 /*Crearle el texto oculto */
 .creo{
@@ -594,7 +568,7 @@ width: 590px;
     border-radius: 10%;
     box-shadow: 16px 14px 20px #0000008c;
     position: absolute;
-    margin-left: 1300px;
+    margin-left: 1250px;
     margin-top: 520px;
 }
 
