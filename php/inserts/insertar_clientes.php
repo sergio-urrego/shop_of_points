@@ -1,6 +1,6 @@
 <?php
-require_once('../php/validate_session.php');
-require_once('../php/conecxion.php');
+require_once('../validate_session.php');
+require_once('../conecxion.php');
 $cedula=$_POST['cedula'];
 $nombre=$_POST['nombre'];
 $apellidos=$_POST['apellidos'];
@@ -15,7 +15,8 @@ $contraseña=$_POST['contraseña'];
     (cedula, nombre, apellidos,correo, celular, usuario_creo, fecha_creacion) VALUES
     ('$cedula','$nombre','$apellidos','$correo',
     '$celular','$_SESSION[user]','$fecha_actual')";
-    $resultado=mysqli_query($con,$insertar);   
+    $resultado=mysqli_query($con,$insertar); 
+    echo $insertar;  
     
     if ($resultado){
         $complemento="INSERT INTO detalles_clientes

@@ -113,7 +113,7 @@
                   </form>
                 </div>
             
-            <h1>Empresa</h1>
+            <h1>Historial Empresas</h1>
         </section>
 
         <section class="table__body">

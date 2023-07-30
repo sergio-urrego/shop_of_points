@@ -276,7 +276,7 @@
 
     <!--Segundo Formulario-->
     <div class="consultas desplegar" id="consultar">
-        <form class="form-control w-50" action="../html/ingresar_empresa.php" method="post">
+        <form class="form-control w-50" action="../php/ingresarempresa.php" method="post">
             <h1 class="text-center">Igresar empresa</h1>
             <div class=" form-control border-white">
                 <label for="">NIT</label>

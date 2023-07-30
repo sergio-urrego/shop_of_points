@@ -19,9 +19,8 @@ function insertclientes(){
             reverseButtons: true
           }).then((result) => {
             if (result.isConfirmed) {
-                $.post('../php/insertclientes.php',form,  
+                $.post('../php/inserts/insertar_clientes.php',form,  
                 function(){
-                    //window.location='www.google.com';
                     $("#nombre").val(''); 
                     $("#apellidos").val(''); 
                     $("#cedula").val(''); 

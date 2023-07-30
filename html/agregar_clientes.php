@@ -124,7 +124,7 @@
         <!--section -->
         <section class="seccion-header">
             <div class="container mt-5 align-items-center ">
-                <form id="form" class="form col-10 col-md-7" method="post">
+                <form id="form" class="form col-10 col-md-7" action="../php/inserts/insertar_clientes.php" method="post" >
                     <h2 class="fw-bold text-center ">Registro de Usuario</h2>
                     <br>
                     <div class="row g-3">
@@ -200,7 +200,7 @@
                         </div>
 
                         <div class="d-grid">
-                                <button type="button" class="btn colorverde" onclick="insertclientes()">agregar</button>
+                                <button  class="btn colorverde" type="button" onclick="insertclientes()">agregar</button>
                         </div>
 
                     </div>
