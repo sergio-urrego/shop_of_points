@@ -29,7 +29,7 @@ function insertarEmpresa(){
                     $("#celular").val(''); 
                     $("#telefono").val('');
                     $("#porcentaje").val('');
-                    $("#tope").val('');
+                    $("#valor").val('');
                 }
                 );    
               swalWithBootstrapButtons.fire(
@@ -100,8 +100,8 @@ function validarCamposFormularioInsertarEmpresa(){
       return false;
     }
     //
-    if($("#tope").val()=='' || $("#tope").val()==null ){
-      alert("el campo tope no puede estar vacío");
+    if($("#valor").val()=='' || $("#valor").val()==null ){
+      alert("el campo valor por punto no puede estar vacío");
       return false;
     }
     

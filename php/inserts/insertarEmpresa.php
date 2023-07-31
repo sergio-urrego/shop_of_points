@@ -11,8 +11,8 @@ require_once('../conecxion.php');
     
     if ($resultado){
         $consulta="INSERT INTO sistema_puntos
-        ( `nit_empresa`,`porc_bono`, `tope_canje`, `usuario_creo`, `fecha_creo`) VALUES 
-        ('$_POST[nit]','$_POST[porcentaje]','$_POST[tope]','$_SESSION[user]','$fecha_actual')";
+        ( `nit_empresa`,`porc_bono`, `valor_punto`, `usuario_creo`, `fecha_creo`) VALUES 
+        ('$_POST[nit]','$_POST[porcentaje]','$_POST[valor]','$_SESSION[user]','$fecha_actual')";
         $verificar=mysqli_query($con,$consulta);
         echo $agregar;
     }
