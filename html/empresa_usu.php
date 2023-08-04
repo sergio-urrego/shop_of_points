@@ -15,7 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Documen</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/empresa_usu.css">
+    <link rel="stylesheet" href="http://localhost/shop_of_points/css/empresa_usu.css">
 </head>
 <body>
     <header id="header" class="contenedor-header">
@@ -144,7 +144,7 @@
                             <td><?php echo $empresa['celular'] ?></td>
                             <td><?php echo $empresa['telefono'] ?></td>
                             <td>
-                                <button class="btn btn-sm btn-danger"  >
+                                <button class="btn btn-sm btn-danger rojo"  >
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16" >
                                     <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z"/>
                                     </svg>
@@ -175,7 +175,7 @@
                                     <td><?php echo $empresa['celular'] ?></td>
                                     <td><?php echo $empresa['telefono'] ?></td>
                                     <td>
-                                        <button class="btn btn-sm btn-danger" >
+                                        <button class="btn btn-sm btn-danger rojo" >
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16" >
                                             <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z"/>
                                             </svg>
@@ -208,7 +208,7 @@
                                     <td><?php echo $empresa['telefono'] ?></td>
                                     <td>
                                     
-                                        <button class="btn btn-sm btn-danger"  value="">
+                                        <button class="btn btn-sm btn-danger rojo"  value="">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16" >
                                             <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z"/>
                                              </svg>
@@ -233,7 +233,35 @@
                 </tbody>    
             </table>
         </section>
-    
+<!--formulario de eliminar-->
+<div class="eliminacion bajar" id="basura">
+        <form class="form-control w-50 t-0 position-absolute" enctype="multipart/form-data" id="form" method="post"  >
+            <h1 class="text-center">Eliminar empresa</h1>
+            <div class=" form-control border-white ">
+                <label for="">NIT</label>
+                <input type="text" readonly class="form-control w-90 eli" id="nit_eliminacion"  name="empresa_nit" >
+            </div>
+
+            <div class="form-control border-white text-align-center">
+                <label for="">nombre empresa</label>
+                <input type="text" readonly class="form-control w-90 eli" id="nombre_eliminacion" name="empresa_nombre">
+            </div>
+
+            <div class="form-control border-white text-align-center">
+                <select id="tipo" name="tipo_opcion"  class="form-select">
+                    <option value="0" >Seleccione tipo de eliminacion </option>
+                    <option value="1">Desactivar</option>
+                    <option value="2">Eliminar del todo</option>
+                </select>
+            </div>
+
+            <div class="form-control border-white d-flex  align-items-center justify-content-center">
+                <button  type="button" class="btn color1 " onclick="elimiadosuave()" >Eliminar</button>
+            </div>
+        </form>
+        <button  class="cerrar1 position-absolute btn" >close</button>
+    </div>
+
 <!--formulario de actualización-->
     <div class="formulario top translate" id="actualizar">
         <form class="form-control w-50" id="form" name="form" enctype="multipart/form-data" method="post">
@@ -280,7 +308,7 @@
             <h1 class="text-center">Igresar empresa</h1>
             <div class=" form-control border-white">
                 <label for="">NIT</label>
-                <input type="text" readonly class="form-control w-90 rell"  name="empresa_nit" >
+                <input type="number" readonly class="form-control w-90 rell"  name="empresa_nit" >
             </div>
 
             <div class="form-control border-white text-align-center">
@@ -318,14 +346,28 @@
 const table = document.getElementById("table");
 const actualizar = document.getElementById("actualizar");
 const consultar = document.getElementById("consultar");
+const basura = document.getElementById('basura')
 const inputs = document.querySelectorAll(".act");
 const rellenar = document.querySelectorAll(".rell");
+const eliminar = document.querySelectorAll(".eli")
 
 console.log(inputs);
 let count = 0;
 
 window.addEventListener("click", (e) => {
+
+if (e.target.matches(".rojo")) {
     
+    let data = e.target.parentElement.parentElement.children;
+    fillData0(data);
+    basura.classList.toggle("bajar");
+  }
+
+  if (e.target.matches(".cerrar1")) {
+  basura.classList.toggle("bajar");
+  count=0 
+  } 
+/*boton actualizar*/
  if (e.target.matches(".btn-warning")) {
     
     let data = e.target.parentElement.parentElement.children;
@@ -337,6 +379,8 @@ window.addEventListener("click", (e) => {
   actualizar.classList.toggle("translate");
   count=0
   }
+
+/*Boton seleccionar */
   if (e.target.matches(".seleccionar")) {
             
     let data = e.target.parentElement.parentElement.children;
@@ -363,6 +407,14 @@ const fillData1 = (data) => {
     count += 1;
   }
 };
+
+const fillData0 = (data) => {
+  for (let index of eliminar ) {
+    index.value = data[count].textContent;
+    count += 1;
+  }
+};
+
 </script>
     <script type="text/javascript" src="../jquery/jquery.js"></script>
     <script type="text/javascript" src="../jquery/jquery.validate.js"></script>

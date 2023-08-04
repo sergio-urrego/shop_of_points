@@ -108,7 +108,7 @@
             <h2 class="decoracion espacio2">Control de empresas</h2>        
 
             <div class="container3">
-                <div class="cuadro2" class="">
+                <div class="cuadro2 d-flex  align-items-center justify-content-center" >
                     <?php 
                         $consulta="SELECT * FROM empresa ";
                         $resultado=mysqli_query($con,$consulta);
@@ -126,7 +126,7 @@
     
         <div class="col-4">
             <div class="container2">
-                <div class="cuadro">
+                <div class="cuadro d-flex  align-items-center justify-content-center" >
                     <?php 
                         $consulta="SELECT * FROM empresa WHERE usuario_borro is not null " ;
                         $resultado=mysqli_query($con,$consulta);
@@ -166,12 +166,12 @@
                         while ($empresa=mysqli_fetch_array($resultado)){
                         ?>
                         <tr>
-                            <td><?php echo $empresa['nit'] ?></td>
+                            <td class="dato" data-id="1" ><?php echo $empresa['nit'] ?></td>
                             <td><?php echo $empresa['nombre'] ?></td>
                             <td><?php echo $empresa['correo_empresa'] ?></td>
                             <td>
                                 <div class="movimiento">
-                                <button class="btn btn-sm btn-success">
+                                <button class="btn btn-sm btn-success enviarbtn"  >
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
                                     <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
                                     </svg>
@@ -205,9 +205,28 @@
      <script type="text/javascript" src="../jquery/jquery.validate.js"></script>
      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
      <script src="../js/cerrarseccion.js"></script>
+     <script src="../js/activarempresa.js"></script>
      <!-- jQuery UI 1.11.4 -->
      <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
      <!-- jQuery 2.2.3 -->
      <script src="../jquery/jquery-2.2.3.min.js"></script>
+     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $('.enviarbtn').click(function() {
+          // Obtén el dato desde el elemento td padre
+          var dato = $(this).closest('tr').find('.dato').text();
+
+          // Realiza la petición AJAX
+          $.post('../php/update/activarempresa.php', { dato: dato }, function(response) {
+            // Procesa la respuesta del servidor y muéstrala en el contenedor
+            location.reload();
+          }).fail(function() {
+            // Maneja el error si ocurre uno durante la petición
+            alert('Ha ocurrido un error al enviar el dato.');
+          });
+        });
+      });
+</script>
 </body>
 </html>

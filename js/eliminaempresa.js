@@ -1,22 +1,55 @@
-function elimiadosuave(){
-    let form=$("#form").serialize();
-    let empresa=$("#nombre").val();
 
-    Swal.fire({
-        title: 'deseas eliminar '+empresa+'?',
-        showDenyButton: true,
-        showCancelButton: true,
-        confirmButtonText: 'desactivar',
-        denyButtonText: `eliminar`,
-      }).then((result) => {
-        /* Read more about isConfirmed, isDenied below */
-        if (result.isConfirmed) {
-          Swal.fire('desactivar!', '', 'success')
-          $.post('../php/update/borradosuave_empresa.php',form,);  
-        } else if (result.isDenied) {
-          Swal.fire('eliminar', '', 'info')
-        }
-      })
+
+function elimiadosuave(){
+  let form=$("#form").serialize();
+  if(this.validarCamposFormularioeliminacion()){
+      const swalWithBootstrapButtons = Swal.mixin({
+      customClass: {
+        confirmButton: 'btn btn-success',
+        cancelButton: 'btn btn-danger',
+      },
+      buttonsStyling: false
+    })
     
-}
+    swalWithBootstrapButtons.fire({
+      title: 'Estas seguro de eliminar y/o desactivar esta empresa?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'si, eliminar/desactivar',
+      cancelButtonText: 'No, cancelar!',
+      reverseButtons: true
+    }).then((result) => {
+      if (result.isConfirmed) {
+          $.post('../php/update/borradosuave_empresa.php',form,  
+          );    
+        swalWithBootstrapButtons.fire(
+          'eliminado y/o desactivado!',
+          'la empresa  a sido eliminada y/o desactivada!.',
+          'success',
+          location.reload()
+        )
+      } else if (
+        /* Read more about handling dismissals below */
+        result.dismiss === Swal.DismissReason.cancel
+      ) {
+        swalWithBootstrapButtons.fire(
+          'Cancelado',
+          'no se ah elimanado y/o desactivado la empresa',
+          'error'
+        )
+      }
+    })
+  }
+  }
+  
+  function validarCamposFormularioeliminacion(){
+    
+    if($("#tipo").val()==0 ){
+        alert("debe selecccionar un tipo de eliminacion");
+        return false;
+    }
+    
+    return true;
+  }
 

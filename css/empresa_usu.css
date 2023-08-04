@@ -362,9 +362,17 @@ span.delay-7 {
     top: 3em;
     left: 70%;
   }
-  .translate{
+  .cerrar{
+    background-color: #ea0808;
+}
+.cerrar:hover{
+    background-color: #ea0808;
+}
+
+.translate{
     transform: translateY(-100%);  /*se desplegara hacia abajo*/
   }
+
 .formulario{
     position: absolute;
     width: 100%;
@@ -394,21 +402,44 @@ span.delay-7 {
 .close:hover{
     background-color: red;
 }
+
+
+
 .desplegar{
     transform: translateY(-100%);
 }
 
-.cerrar{
-    background-color: #ea0808;
-}
-.cerrar:hover{
-    background-color: #ea0808;
-}
 
 .color{
     background-color:#4661fa;
 }
 
 
+.bajar{
+    transform: translatey(-100%);
+}
+.eliminacion{
+    position: absolute;
+    width: 70%;
+    top: 0;
+    height: 90vh;
+    background-color: rgba(46, 44, 44, 0.8);
+    display: grid; /*para centrar el formulario*/
+    place-items: center;
+    transition: .5s; /*tiempo que se desplega*/
+    margin-left: 200px;
+}
+
+.cerrar1{
+    top: 7em;
+    left: 70%;
+    background-color: rgba(252, 10, 10, 0.904);
+}
+.cerrar1 :hover{
+    background-color: rgba(252, 10, 10, 0.904);
+}
+.color1{
+    background-color:#db7312;
+}
 
 

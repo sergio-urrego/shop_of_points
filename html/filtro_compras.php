@@ -202,7 +202,7 @@
 
     <!--Segundo Formulario-->
     <div class="consultas desplegar" id="consultar">
-        <form class="form-control w-50" action="../php/ingresarempresa.php" method="post">
+        <form class="form-control w-50" action="../html/factura.php" method="post">
             <h1 class="text-center">Informacion factura</h1>
             <div class=" form-control border-white">
                 <label for="">N.factura</label>
@@ -211,25 +211,25 @@
 
             <div class="form-control border-white text-align-center">
                 <label for="">N.empresa</label>
-                <input type="number" disabled class="form-control w-90 rell" name="empresa">
+                <input type="number" readonly class="form-control w-90 rell" name="empresa">
             </div>
 
             <div class="form-control border-white">
                 <label for="">C.cliente</label>
-                <input type="number" disabled class="form-control w-90 rell" name="cliente">
+                <input type="number" readonly class="form-control w-90 rell" name="cliente">
             </div>
 
             <div class="form-control border-white">
-                <label for="">valor</label>
-                <input type="number" disabled class="form-control w-90 rell" name="valor">
+                <label for="">valor de la compra</label>
+                <input type="number" readonly class="form-control w-90 rell" name="valor">
             </div>
 
             <div class="form-control border-white d-flex justify-content-evenly">
                 <label for="">fecha</label>
-                <input type="date" disabled class="form-control w-25 rell" name="fecha">
+                <input type="date" readonly class="form-control w-25 rell" name="fecha">
 
                 <label for="">estado</label>
-                <input type="text" disabled class="form-control w-25 rell" name="estado">
+                <input type="text" readonly class="form-control w-25 rell " name="estado">
             </div>
             <div class="form-control border-white">
                 <button class="btn color ">Ingresar</button>
