@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
+require_once('php/validate_session.php');
 $user="root";
 $pass="";
 $server="localhost";

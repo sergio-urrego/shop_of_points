@@ -1,0 +1,266 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:  sans-serif;
+}
+body{
+    background-color: rgb(243, 237, 248); /*cente, cover*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 90%;
+}
+.espacio1{
+    margin-left: 20px;
+    position: absolute;
+    margin-top: 40px;    
+}
+.espacio2{
+    margin-left: 580px;
+    margin-top: 120px;
+    display: flex;
+}
+
+.imagen{
+    margin-left: 10%;
+    
+}
+.imagen3{
+    justify-content: start;
+    margin-left: 5px;
+    margin-top: 5%;
+    position: absolute;
+}
+.imagen4{
+    margin-left:64.9%;
+    margin-top: 5%;
+    position: absolute;
+}
+.t_puntos{
+    margin-top: 20px;
+    margin-left: 200px;
+    text-align: center;
+    
+}
+.peso{
+    margin-left: 2px;
+}
+b{
+    color: #080808;
+}
+
+b.b1{
+    color: #f08b1e
+}
+.nombre{
+    font-size:35px ;
+}
+.informacion{
+    margin-left: 50%;
+    align-items: center;
+    text-align: center;
+}
+
+/*tarjeta de nuevos usuarios*/
+.container2{
+    position: relative;
+    align-items: center;
+    margin-left: 90%;
+    margin-top: 20px;
+}
+
+.cuadro{
+    height: 220px;
+    width: 250px;
+    background-color: #2c4f16;
+    border-radius: 10%;
+    box-shadow: 16px 14px 20px #0000008c;
+    position: relative;
+    overflow: hidden;/*quitar las barras del a lado, deslizamiento*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cuadro::before{
+    content: ""; /*contenido en forma dinamica*/
+    position: absolute;
+    height: 300px;
+    width: 300px;
+    background-image: conic-gradient(rgb(115, 255, 0) 20deg, transparent 120deg);
+    animation: circulo 2s linear infinite;
+}
+
+@keyframes circulo{
+    from{
+        transform: rotate(0deg);
+    }
+
+    to{
+        transform: rotate(-360deg); /*de la vuelta toda*/
+    }
+}
+
+.cuadro:after{
+    content: "";
+    position: absolute;
+    height: 205px;
+    width: 230px;
+    background-color: #dae1d9;
+    border-radius: 10%;
+    box-shadow: inset 16px, 14px 20px #0000008c ;
+}
+/*tarjeta de usuarios*/
+h1{
+    color: #fff;
+    z-index: 5; /*los elementos se adecueen en la tarjeta*/
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    top: 3px;
+    margin-left: 1px;    
+    text-shadow: 5px 5px 5px black;
+}
+
+/*menu*/
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none ; /*quitar las lineas*/
+}
+a{
+    color: #fff; /*color de la letra*/
+    text-decoration: none;
+}
+
+
+/*menuu*/
+.menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 10;  /*posición de apilamiento más alta que otros elementos*/
+}
+.ul-home{
+    height: 150px; 
+}
+.ul-home li a {
+    display: inline-flex; /*el elemento ocupará solo el espacio necesario*/
+    flex-direction: column; /*los elementos se colocarán en una columna vertical, de arriba hacia abajo.*/
+    align-items:center ;
+    justify-content: center;
+    width: 150px;
+    height: 150px;
+    background-color: rgb(0, 255, 8);
+    border-radius:0 0 50% 0 ;/*esquina inferior derecha*/
+    box-shadow: 0 0 15px 12px rgb(0, 0, 0,.5);/*sombra*/
+}
+/*icono de la casa*/
+
+.ul-home li a svg {
+    font-size: 3rem;
+    margin-bottom: .10rem;
+}
+.ul-home li a span { /*nombres del menu*/
+    font-size: 1.7em;
+}
+/*ocultar desborde*/
+.a-inicio {
+    overflow: hidden; 
+}
+.a-inicio svg{
+    display: inline-block; 
+    transform: rotateX(0deg) scale(1) translate(0,0); /*no girara en x,conservará su tamaño original, no producirá ninguna traslación en ninguna dirección*/
+    transition: all ease-in-out 300ms; /*suavisar la transicion*/
+}
+/*aplicar transicion al menu*/
+.a-inicio:hover svg {
+    transform: rotatey(180deg) scale(1) translate(25%,-25%); /* el elemento se girará horizontalmente, 25% (eje X)traslación a la derecha en un 25% del ancho, 25% (eje Y)traslación hacia arriba en un 25% de altura*/
+}
+
+/*iconos del menu*/
+.ul-enlaces {
+    height: calc(87% - 50px); /*100% el elemento tomará el 100% de la altura disponible y el 190 restara  la altura del elemento en 190px*/
+    background-color:rgb(255, 98, 0); ;
+    width: 85px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 15px 2px rgba(201, 83, 24, 0.5);
+}
+.ul-enlaces li + li{
+    border-top: 1px solid rgba(79, 219, 184, .5); /*lineaa*/
+}
+.ul-enlaces a{
+    display: inline-flex; /*el espacio de un elemento a otro*/
+    align-items: center; 
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 65px;
+    margin-top: 20px;
+}
+.ul-enlaces a svg {
+    font-size: 1.3rem;
+    transition: all ease-in-out 300ms; 
+    
+}
+.ul-enlaces a:hover svg {
+    transform: scale(1.5); /*el elemento se agrandara a un ancho y alto de 150 píxeles.*/
+}
+/*giroo de los nombres*/
+.ul-enlaces a span {
+    font-size:20px ;
+    display: inline-block;
+    position: absolute;
+    background-color: #fff;
+    padding: 5px 10px;
+    border-radius: 12px;
+    transform: translateX(0) rotate(-180);
+    transition: all ease-in-out 300ms; 
+    opacity: 0;
+}
+.ul-enlaces a:hover span {
+    transform: translateX(4rem) rotate(0); /*traslación horizontal de 4 unidades rem al elemento*/
+    opacity: 1;
+}
+.ul-enlaces a span.fondo-violeta{
+    background-color: violet;
+}
+.ul-enlaces a span.fondo-cielo{
+    background-color: #48afff;
+}
+.ul-enlaces a span.fondo-verde{
+    background-color: #22e12b;
+}
+.ul-enlaces a span.fondo-amarillo{
+    background-color: #e1c705;
+}
+.ul-enlaces a span.fondo-rojo{
+    background-color: #ea0808;
+}
+
+
+.puntos{
+    margin-left: 170px;
+    margin-top: 20px;
+}
+button{
+    display: flex;
+    width: 200px;
+    background-color: #22e12b;
+    display: flex;
+    border-radius: 20px;
+    top: 0;
+}
+
+.canjear{
+    margin-left: 15px;
+    margin-top: 10px;
+
+}
+.bi-cash-coin{
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+

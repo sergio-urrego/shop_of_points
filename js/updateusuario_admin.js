@@ -1,6 +1,6 @@
 function actualizarusuariodesdeadmin(){
     if(this.validarCamposFormularioupdateclienteadmin()){
-        let form= $("#form").serialize();
+        let form= $("#formulario").serialize();
         const swalWithBootstrapButtons = Swal.mixin({
             customClass: {
               confirmButton: 'btn btn-success',

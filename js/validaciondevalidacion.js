@@ -1,6 +1,6 @@
 function valirdarlogin(){
     if(this.validarCamposFormulariovalidacion()){
-        let form= $("#form").serialize();
+        let form= $("#formulario").serialize();
         const swalWithBootstrapButtons = Swal.mixin({
             customClass: {
               confirmButton: 'btn btn-success',
@@ -19,8 +19,15 @@ function valirdarlogin(){
             reverseButtons: true
           }).then((result) => {
             if (result.isConfirmed) {
-              alert("entro en el si ")
-              $.post('../php/actualizar_contraseña.php',form,function(){});  
+            //   $.post('../php/validacion.php',form,
+            //   function(){
+            //     //window.location='www.google.com';
+            //     $("#cedula").val(''); 
+            //     $("#password").val(''); 
+            //     $("#inputState").val(''); 
+                
+            // });  
+            console.log(from)
               
             }
           })
@@ -46,5 +53,14 @@ function validarCamposFormulariovalidacion(){
           })
         return false;
     } 
+    if($("#inputState").val()=='' || $("#inputState").val()==null ){
+      Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'debes seleccionar una empresa!',
+        })
+      return false;
+  } 
     return true;
+
 }

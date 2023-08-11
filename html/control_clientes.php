@@ -126,7 +126,7 @@
             <div class="container2">
                 <div class="cuadro">
                     <?php 
-                        $consulta="SELECT * FROM clientes c inner join  detalles_clientes u on c.cedula = u.cedula_cliente where u.usuario_borro is not null and c.usuario_borro is not null";
+                        $consulta="SELECT * FROM clientes c inner join  detalles_clientes u on c.cedula = u.cedula_cliente where u.usuario_borro is not null ";
                         $resultado=mysqli_query($con,$consulta);
                         $validacion2=mysqli_num_rows($resultado);
                         $cuenta2=$validacion2;
@@ -159,21 +159,21 @@
                         </thead>
                         <tbody class="icono">
                         <?php
-                        $consulta="SELECT c.cedula, c.nombre, c.usuario_creo,c.fecha_creacion, c.usuario_actualizo,
+                        $consulta="SELECT c.cedula, c.nombre,c.correo, c.usuario_creo,c.fecha_creacion, c.usuario_actualizo,
                         c.fecha_actualizacion, c.usuario_borro,
-                        c.fecha_borrado, u.nit_empresa 
+                        c.fecha_borrado, u.nit_empresa , u.usuario_borro
                                     FROM clientes c inner join  detalles_clientes u on c.cedula = u.cedula_cliente 
-                                    WHERE u.nit_empresa='$_SESSION[empresa]' and c.usuario_borro is not null ";
+                                    WHERE u.nit_empresa='$_SESSION[empresa]' and u.usuario_borro is not null ";
                         $resultado=mysqli_query($con,$consulta);
                         while ($empresa=mysqli_fetch_array($resultado)){
                         ?>
                         <tr>
-                            <td><?php echo $empresa['nit'] ?></td>
+                            <td class="dato" data-id="1"><?php echo $empresa['cedula'] ?></td>
                             <td><?php echo $empresa['nombre'] ?></td>
-                            <td><?php echo $empresa['correo_empresa'] ?></td>
+                            <td><?php echo $empresa['correo'] ?></td>
                             <td>
                                 <div class="movimiento">
-                                <button class="btn btn-sm btn-success">
+                                <button class="btn btn-sm btn-success enviarbtn">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
                                     <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
                                     </svg>
@@ -211,5 +211,23 @@
      <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
      <!-- jQuery 2.2.3 -->
      <script src="../jquery/jquery-2.2.3.min.js"></script>
+     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $('.enviarbtn').click(function() {
+          // Obtén el dato desde el elemento td padre
+          var dato = $(this).closest('tr').find('.dato').text();
+
+          // Realiza la petición AJAX
+          $.post('../php/update/activarcliente.php', { dato: dato }, function(response) {
+            // Procesa la respuesta del servidor y muéstrala en el contenedor
+            location.reload();
+          }).fail(function() {
+            // Maneja el error si ocurre uno durante la petición
+            alert('Ha ocurrido un error al enviar el dato.');
+          });
+        });
+      });
+</script>
 </body>
 </html>

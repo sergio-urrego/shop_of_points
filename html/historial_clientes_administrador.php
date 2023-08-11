@@ -115,8 +115,8 @@ $cedula=$_POST['cedula']
 
         // consulta general de la empresa
         $historial="SELECT c.cedula, c.nombre, c.usuario_creo,c.fecha_creacion, c.usuario_actualizo,
-                           c.fecha_actualizacion, c.usuario_borro,
-                           c.fecha_borrado, u.nit_empresa 
+                           c.fecha_actualizacion, u.usuario_borro,
+                           u.fecha_borrado, u.nit_empresa 
                     FROM clientes c inner join  detalles_clientes u on c.cedula = u.cedula_cliente 
                      WHERE u.nit_empresa='$_SESSION[select_empresa]' and c.cedula='$cedula' ";
         $resultado=mysqli_query($con,$historial);
@@ -129,6 +129,7 @@ $cedula=$_POST['cedula']
             $quien_borro=$insertar['usuario_borro'];
             $fecha_borro=$insertar['fecha_borrado'];
         }
+        echo $fecha_borro;
 
         $nomcreador="SELECT cedula,nombre,apellidos FROM usuario where cedula=$creado";
         $resultado1=mysqli_query($con,$nomcreador);
@@ -183,11 +184,12 @@ $cedula=$_POST['cedula']
             // Ejemplo de uso
             $resultado3 = dividirFechaYHoracreo($fecha_borro);
             
-            $$fecha_borro=$resultado3['fecha'];
+            $fecha_borro=$resultado3['fecha'];
             $hora_borro=$resultado3['hora'];
+
             
 
-        }else if($fecha_borro==null || $$fecha_borro==''){
+        }else if($fecha_borro==null || $fecha_borro==''){
             $$fecha_borro='';
             $hora_borro='';        
         }
@@ -331,12 +333,11 @@ $cedula=$_POST['cedula']
 
         
     <h2 class="borrado">
-        <?php echo  $fecha_borro ;?>
+        <?php echo $fecha_borro;;?>
     </h2>  
     <center><h2 class="borrador"> <?php echo  $nombre_borro;?></h2></center>
     
     </div>
-
 
     <script>
         function ver(){

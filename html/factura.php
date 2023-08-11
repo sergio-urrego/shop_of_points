@@ -42,7 +42,7 @@ function convertirFecha($fecha_factura) {
     );
 }
 
-$fechaDB = '2023-08-02'; // Fecha obtenida de la base de datos
+$fechaDB =$fecha_factura; // Fecha obtenida de la base de datos
 $fecha_convertida = convertirFecha($fechaDB);
 
 $dia= $fecha_convertida['dia'];

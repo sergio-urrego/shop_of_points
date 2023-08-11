@@ -1,6 +1,6 @@
 function actualizarEmpresa(){
     if(this.validarCamposFormularioactualizacionEmpresa()){
-        let form= $("#form").serialize();
+      var form= $('#formulario').serialize();
         const swalWithBootstrapButtons = Swal.mixin({
             customClass: {
               confirmButton: 'btn btn-success',
@@ -19,13 +19,11 @@ function actualizarEmpresa(){
             reverseButtons: true
           }).then((result) => {
             if (result.isConfirmed) {
-                $.post('../php/update/update_empresa.php',form,  
-                );    
+              $.post('../php/update/update_empresa.php',form)
               swalWithBootstrapButtons.fire(
                 'actualizado!',
                 'los datos de la empresa fueron actualizados correctamente.',
                 'success',
-                //window.location.replace("http://localhost/shop_of_points/html/empresa_usu.php")
               )
               
             } 

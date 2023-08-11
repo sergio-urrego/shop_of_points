@@ -140,10 +140,10 @@
                 </thead>
                 <?php
                     if (!isset($_POST["buscar"])){
-                        $consulta="SELECT c.cedula, c.nombre, c.apellidos, c.celular, c.correo, u.nit_empresa 
+                        $consulta="SELECT c.cedula, c.nombre, c.apellidos, c.celular, c.correo, u.nit_empresa , u.usuario_borro
                                      FROM clientes c 
                                      inner join  detalles_clientes u on c.cedula = u.cedula_cliente  
-                                            WHERE u.nit_empresa='$_SESSION[select_empresa]'";
+                                            WHERE u.nit_empresa='$_SESSION[select_empresa]' and u.usuario_borro is null";
                         $resultado=mysqli_query($con,$consulta);
                         while  ($usuarios=mysqli_fetch_array($resultado)){
                         ?>
@@ -154,7 +154,7 @@
                             <td><?php echo $usuarios['celular'] ?></td>
                             <td><?php echo $usuarios['correo'] ?></td>
                             <td>
-                            <button class="btn btn-sm btn-danger"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16" >
+                            <button class="btn btn-sm btn-danger rojo"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16" >
                                 <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z"/>
                             </svg>
                             </button>
@@ -162,17 +162,17 @@
                                 <path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z"/>
                               </svg>
                             </button>
-                            <button class="btn btn-sm btn-success seleccionar">
+                            <!-- <button class="btn btn-sm btn-success seleccionar">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
                                     <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
                                     </svg>
-                            </button>
+                            </button> -->
                         </td>
                         </tr><?php }
                     }else if(isset($_POST["buscar"])){
                         
                         if ($_POST["buscar"]==''){
-                            $consulta="SELECT c.cedula, c.nombre, c.apellidos, c.celular, c.correo, u.nit_empresa FROM clientes c inner join  detalles_clientes u on c.cedula = u.cedula_cliente  WHERE u.nit_empresa='$_SESSION[select_empresa]'";
+                            $consulta="SELECT c.cedula, c.nombre, c.apellidos, c.celular, c.correo, u.nit_empresa, u.usuario_borro FROM clientes c inner join  detalles_clientes u on c.cedula = u.cedula_cliente  WHERE u.nit_empresa='$_SESSION[select_empresa]' and u.usuario_borro is null";
                             $resultado=mysqli_query($con,$consulta);
                             while  ($usuarios=mysqli_fetch_array($resultado)){
                             ?>
@@ -183,7 +183,7 @@
                                 <td><?php echo $usuarios['celular'] ?></td>
                                 <td><?php echo $usuarios['correo'] ?></td>
                                 <td>
-                            <button class="btn btn-sm btn-danger"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16" >
+                            <button class="btn btn-sm btn-danger rojo"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16" >
                                 <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z"/>
                             </svg>
                             </button>
@@ -191,20 +191,20 @@
                                 <path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z"/>
                               </svg>
                             </button>
-                            <button class="btn btn-sm btn-success seleccionar">
+                            <!-- <button class="btn btn-sm btn-success seleccionar">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
                                     <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
                                     </svg>
-                            </button>
+                            </button> -->
                         </td>
                             </tr><?php }
                             }else{
                             
-                            $consulta="SELECT c.cedula, c.nombre, c.apellidos, c.celular, c.correo, u.nit_empresa 
+                            $consulta="SELECT c.cedula, c.nombre, c.apellidos, c.celular, c.correo, u.nit_empresa, u.usuario_borro 
                                        FROM clientes c 
                                             inner join  detalles_clientes u on c.cedula = u.cedula_cliente  
                                        WHERE u.nit_empresa='$_SESSION[select_empresa]' and 
-                                             (c.nombre like '%$_POST[buscar]%' or c.cedula = '$_POST[buscar]')";
+                                             (c.nombre like '%$_POST[buscar]%' or c.cedula = '$_POST[buscar]') and u.usuario_borro is null";
                             $resultado=mysqli_query($con,$consulta);
                             while  ($usuarios=mysqli_fetch_array($resultado)){
                             ?>
@@ -215,7 +215,7 @@
                                 <td><?php echo $usuarios['celular'] ?></td>
                                 <td><?php echo $usuarios['correo'] ?></td>
                                 <td>
-                            <button class="btn btn-sm btn-danger"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16" >
+                            <button class="btn btn-sm btn-danger rojo"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16" >
                                 <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z"/>
                             </svg>
                             </button>
@@ -223,21 +223,51 @@
                                 <path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z"/>
                               </svg>
                             </button>
-                            <button class="btn btn-sm btn-success seleccionar">
+                            <!-- <button class="btn btn-sm btn-success seleccionar">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
                                     <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
                                     </svg>
-                            </button>
+                            </button> -->
                         </td>
                             </tr><?php }
                         }}?>
                 </tbody>
             </table>
         </section>
+
+        <div class="borrar caer" id="eliminacion">
+        <form class="form-control w-50 t-0 position-absolute" enctype="multipart/form-data" id="form" method="post"  >
+            <h1 class="text-center">Eliminar Cliente</h1>
+            <div class=" form-control border-white ">
+                <label for="">Cedula</label>
+                <input type="text" readonly class="form-control w-90 eli" id="cedula_eliminacion"  name="cliente_cedula" >
+            </div>
+
+            <div class="form-control border-white text-align-center">
+                <label for="">Nombre</label>
+                <input type="text" readonly class="form-control w-90 eli" id="nombre_eliminacion" name="Cliente_nombre">
+            </div>
+
+            <div class="form-control border-white text-align-center">
+                <select id="tipo" name="tipo_opcion"  class="form-select">
+                    <option value="0" >Seleccione tipo de eliminacion </option>
+                    <option value="1">Desactivar</option>
+                    <option value="2">Eliminar del todo</option>
+                </select>
+            </div>
+
+            <div class="form-control border-white d-flex  align-items-center justify-content-center">
+                <button  type="button" class="btn colorr " onclick="eliminadosuave()" >Eliminar</button>
+            </div>
+        </form>
+        <button  class="cerrarr position-absolute btn" >close</button>
+    </div>
+
+
     
 <!--formulario de actualización-->
     <div class="formulario top translate" id="actualizar">
-        <form class="form-control w-50" id="form" name="form"  enctype="multipart/form-data" method="post">
+        <form class="form-control w-50" id="formulario" name="form"  enctype="multipart/form-data" method="post">
             <h1 class="text-center">Actalizacion de Usuarios</h1>
             <div class=" form-control border-white">
                 <label for="">Cedula</label>
@@ -311,12 +341,31 @@
         const table = document.getElementById("table");
         const actualizar = document.getElementById("actualizar");
         const consultar = document.getElementById("consultar")
+        const eliminacion = document.getElementById("eliminacion")
         const inputs = document.querySelectorAll(".act");
         const rellenar = document.querySelectorAll(".rellenar");
+        const eliminar= document.querySelectorAll(".eli");
+
+        console.log(inputs);
         let count = 0;
         
         window.addEventListener("click", (e)  => {
-            
+            /*eliminar */
+
+        if (e.target.matches(".rojo")) {
+    
+            let data = e.target.parentElement.parentElement.children;
+            fillData0(data);
+            eliminacion.classList.toggle("caer");
+        }
+
+        if (e.target.matches(".cerrarr")) {
+        eliminacion.classList.toggle("caer");
+        count=0 
+          } 
+
+
+        /*actualizacion*/
          if (e.target.matches(".btn-warning")) {
             
             let data = e.target.parentElement.parentElement.children;
@@ -328,7 +377,7 @@
           actualizar.classList.toggle("translate");
           count=0
           }
-
+          /**seleccionar */
           if (e.target.matches(".seleccionar")) {
             
             let data = e.target.parentElement.parentElement.children;
@@ -341,6 +390,13 @@
           count=0
           };
         });
+
+        const fillData0 = (data) => {
+          for (let index of eliminar) {
+            index.value = data[count].textContent;
+            count += 1;
+          }
+        };
         
         
         const fillData = (data) => {
@@ -362,6 +418,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../js/cerrarseccion.js"></script>
     <script src="../js/updateusuario_admin.js"></script>
+    <script src="../js/eliminarcliente_admin.js"></script>
     <!-- jQuery UI 1.11.4 -->
     <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
     <!-- jQuery 2.2.3 -->

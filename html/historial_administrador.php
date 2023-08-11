@@ -171,7 +171,7 @@
             // Ejemplo de uso
             $resultado3 = dividirFechaYHoracreo($fecha_borro);
             
-            $$fecha_borro=$resultado3['fecha'];
+            $fecha_borro=$resultado3['fecha'];
             $hora_borro=$resultado3['hora'];
             
 
@@ -308,21 +308,17 @@
     </header>
     <img class="imagen" src="../img/descarga3.png" alt="" width="30% " height="30%">
 
-    <div class="tarjeta2 d-block align-items-center ">
-        <h2 class="actualizacion ">Actualizacion </h2>
-        <h2 class="actualizacion  ">de borrado:</h2>
+    <div class="tarjeta2 ">
+        <h2 class="actualizacion ">Actualizacion de borrado: </h2>
         <div class="container4">
                     <span class="color_amarillo"> <b><?php echo  $nombre_borro ;?></b></span>
-                    </div>
-
-                    <span class="color_azul"><b>HORA:</b> <?php echo  $hora_borro ;?> </span>
-
+        </div>
+        <span class="color_azul cuadrar"><b>HORA:</b> <?php echo  $hora_borro ;?> </span>
         
-    <h2 class="borrado">
+        <h2 class="borrado">
         <?php echo  $fecha_borro ;?>
     </h2>  
     <center><h2 class="borrador"> <?php echo  $nombre_borro;?></h2></center>
-    
     </div>
 
 

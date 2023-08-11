@@ -116,8 +116,7 @@
                         $cuenta=$validacion;
                     ?>
                     <h1>empresas<br>
-                        <?php echo $cuenta;
-                        ?>
+                        <center><?php echo $cuenta;?></center>
                     </h1>
                 </div>
             </div>
@@ -134,9 +133,7 @@
                         $cuenta2=$validacion2;
                     ?>
                     <h1>Desactivadas<br>
-                        <img src="../img/peso1.png" alt="" width="50px">
-                        <?php echo $cuenta2;
-                        ?>
+                        <center><?php echo $cuenta2;?></center>
                     </h1>
                 </div>
             </div>

@@ -25,7 +25,7 @@
                 </div>
                 
                 <div class="col">
-                    <form class="col-12" id="form" name="form" action="../php/validacion.php" method="post">
+                    <form class="col-12" id="formulario" name="form" action="../php/validacion.php" method="post">
                         <div class="mb-4">
                             <label for=""> Usuario</label>
                             <input type="text"  class="form-control" placeholder="Ingrese su numero de cedula" name="cedula" id="cedula">
@@ -37,9 +37,10 @@
                         <div class="my-3">
                             <label for="inputState"> Empresa </label>
                             <select id="inputState" name="empresa" class="form-control" id="inputState" >
+                            <option value="">seleccione una empresa</option>
                                 <?php
                                 require_once('../php/conecxion.php');
-                                $empresa="SELECT * FROM empresa";
+                                $empresa="SELECT * FROM empresa where usuario_borro is null";
                                 $resultado=mysqli_query($con,$empresa);
                                 while ($valores=mysqli_fetch_array($resultado)){ 
                                    echo '<option value="'.$valores['nit'].'">'.$valores['nombre'].'</option>'; 
@@ -49,7 +50,7 @@
                             </select>
                         </div>
                         <div class="d-grid">
-                            <button type="submit" class="btn btn-success" >Iniciar Sesión</button>
+                            <button type="submit" class="btn btn-success"  >Iniciar Sesión</button>
                         </div>
 
                         <div class="my-3">
@@ -69,6 +70,7 @@
     <script src="../js/validaciondevalidacion.js"></script>
     <!-- jQuery UI 1.11.4 -->
     <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- jQuery 2.2.3 -->
     <script src="../jquery/jquery-2.2.3.min.js"></script>
 </body>

@@ -5,7 +5,6 @@ require_once('../conecxion.php');
 $nit=$_POST['empresa_nit'];
 
 if ($_POST['tipo_opcion']==1){
-    echo "entro en el si";
     date_default_timezone_set('America/Bogota');
     $fecha_actual = date("Y-m-d h:i:s");
 

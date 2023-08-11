@@ -264,7 +264,7 @@
 
 <!--formulario de actualización-->
     <div class="formulario top translate" id="actualizar">
-        <form class="form-control w-50" id="form" name="form" enctype="multipart/form-data" method="post">
+        <form class="form-control w-50" enctype="multipart/form-data" id="formulario"  method="post" >
             <h1 class="text-center">Actualizacion de empresa</h1>
             <div class=" form-control border-white">
                 <label for="">nit</label>
@@ -419,12 +419,13 @@ const fillData0 = (data) => {
     <script type="text/javascript" src="../jquery/jquery.js"></script>
     <script type="text/javascript" src="../jquery/jquery.validate.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../jquery/jquery-2.2.3.min.js"></script>
     <script src="../js/cerrarseccion.js"></script>
     <script src="../js/updateempresa.js"></script>
     <script src="../js/eliminaempresa.js"></script>
     <!-- jQuery UI 1.11.4 -->
     <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- jQuery 2.2.3 -->
-    <script src="../jquery/jquery-2.2.3.min.js"></script>
 </body>
 </html>

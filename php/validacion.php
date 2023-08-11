@@ -40,6 +40,7 @@ if ($validacion>0){
     header("location:http://localhost/shop_of_points/html/usuarios.php");
 }else{
     echo"ERROR USUARIO Y/O CLIENTE NO EXISTEN";
+    
 }
 
 mysqli_free_result($resultado);
