@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+    
 
 <head>
     <meta charset="UTF-8">
@@ -25,14 +26,14 @@
                 </div>
                 
                 <div class="col">
-                    <form class="col-12" id="formulario" name="form" action="../php/validacion.php" method="post">
+                    <form class="col-12" id="form" name="form" enctype="multipart/form-data" method="post">
                         <div class="mb-4">
                             <label for=""> Usuario</label>
                             <input type="text"  class="form-control" placeholder="Ingrese su numero de cedula" name="cedula" id="cedula">
                         </div>
                         <div class="mb-4">
                             <label for="" class="form-label">Contraseña</label>
-                            <input type="password" class="form-control" placeholder="Ingrese su Contraseña" name="contraseña" id="password">
+                            <input type="password" class="form-control" placeholder="Ingrese su Contraseña" name="password" id="password">
                         </div>
                         <div class="my-3">
                             <label for="inputState"> Empresa </label>
@@ -50,7 +51,7 @@
                             </select>
                         </div>
                         <div class="d-grid">
-                            <button type="submit" class="btn btn-success"  >Iniciar Sesión</button>
+                            <button type="button" onclick="valirdarlogin()" class="btn btn-success"  >Iniciar Sesión</button>
                         </div>
 
                         <div class="my-3">
