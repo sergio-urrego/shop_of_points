@@ -1,6 +1,6 @@
 function valirdarlogin(){
     if(this.validarCamposFormulariovalidacion()){
-        let form= $("#formulario").serialize();
+        let form= $("#form").serialize();
         const swalWithBootstrapButtons = Swal.mixin({
             customClass: {
               confirmButton: 'btn btn-success',
@@ -10,25 +10,38 @@ function valirdarlogin(){
           })
           
           swalWithBootstrapButtons.fire({
-            title: 'BIENVENIDO !',
+            title: 'Validando Información...',
             text: "Deseas continuar?",
-            icon: 'success',
+            icon: 'info',
             showCancelButton: true,
-            confirmButtonText: 'si, continuar',
-            cancelButtonText: 'No, cancelar!',
-            reverseButtons: true
+            confirmButtonText: 'Sí, continuar',
+            cancelButtonText: 'No, cancelar!'
           }).then((result) => {
             if (result.isConfirmed) {
-            //   $.post('../php/validacion.php',form,
-            //   function(){
-            //     //window.location='www.google.com';
-            //     $("#cedula").val(''); 
-            //     $("#password").val(''); 
-            //     $("#inputState").val(''); 
-                
-            // });  
-            console.log(from)
-              
+               $.post('../php/validacion.php',form,
+               function(data){
+                 $("#cedula").val(''); 
+                 $("#password").val(''); 
+                 $("#inputState").val('');    
+                 console.log (data); 
+                 if (data=="ADMIN"){
+                  window.location='http://localhost/shop_of_points/html/administrador.php';
+                 }
+                 else if (data=="GERENTE"){
+                  window.location="http://localhost/shop_of_points/html/gerente.php";
+                 }
+                 else if (data=="USER"){
+                  window.location = 'http://localhost/shop_of_points/html/usuarios.php'
+                 } 
+                 else 
+                 {
+                  Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Usuario y/o contraseña inválido',
+                  })
+                 }
+             });               
             }
           })
     }
