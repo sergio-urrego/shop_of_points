@@ -55,7 +55,9 @@
                         </div>
 
                         <div class="my-3">
-                           <center><span><a href="../html/recuperar.php">¿Olvidastes tu Contraseña?</a></span></center> 
+                           <center><span><a href="../html/recuperar.php">¿Olvidastes tu Contraseña?</a></span></center>
+                           <center><span><a class="inicio" href="../inicio/index.html">volver al Inicio</a></span></center> 
+
                            <br>
  
                         </div>

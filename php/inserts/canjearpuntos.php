@@ -36,7 +36,9 @@
         $resultado4=mysqli_query($con,$generarhistorialcanje);
         echo $generarhistorialcanje;
         if($resultado4==true){
-            $actualizarestado="UPDATE acumulado_compras SET estado='canjeado' WHERE nit_empresa='{$_SESSION['empresa']}' AND cedula_cliente='{$_SESSION['user']}' AND estado='activo'";
+            date_default_timezone_set('America/Bogota');
+            $fecha_actual = date("Y-m-d h:i:s");
+            $actualizarestado="UPDATE acumulado_compras SET estado='canjeado', fecha_actualizacion='$fecha_actual' WHERE nit_empresa='{$_SESSION['empresa']}' AND cedula_cliente='{$_SESSION['user']}' AND estado='activo'";
             $resultado5=mysqli_query($con,$actualizarestado);
             if ($resultado5==true){
                 header("location:http://localhost/shop_of_points/html/filtro_historialcanje.php");

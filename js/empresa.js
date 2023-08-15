@@ -16,7 +16,6 @@ function insertarEmpresa(){
             showCancelButton: true,
             confirmButtonText: 'si, agregar',
             cancelButtonText: 'No, cancelar!',
-            reverseButtons: true
           }).then((result) => {
             if (result.isConfirmed) {
                 $.post('../php/inserts/insertarEmpresa.php',form,  

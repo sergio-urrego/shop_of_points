@@ -16,7 +16,6 @@ function insertclientes(){
             showCancelButton: true,
             confirmButtonText: 'si, agregar',
             cancelButtonText: 'No, cancelar!',
-            reverseButtons: true
           }).then((result) => {
             if (result.isConfirmed) {
                 $.post('../php/inserts/insertar_clientes.php',form,  

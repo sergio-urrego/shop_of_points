@@ -68,9 +68,9 @@ $nombreMes = convertirMes($mes);
 <head>
     <meta charset="utf-8">
     <title>Factura de Producto</title>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="..//css/factura.css">
+    <link rel="stylesheet" href="../css/factura.css">
 
 </head>
 
@@ -215,6 +215,31 @@ $nombreMes = convertirMes($mes);
 
             </div>
         </div>
+        <script>
+        // Crea el botón y añádelo al documento
+        const botonAlternar = document.createElement("button");
+        botonAlternar.innerHTML = '<i class="fas fa-pause" ></i>'; // Agregar icono
+        botonAlternar.id = "botonAlternar";
+        botonAlternar.classList.add("btn", "btn-primary", "btn-sm"); // Agregar la clase de boostrap
+        document.body.appendChild(botonAlternar);
+
+        // Obtiene la animación
+        const animacion = document.querySelector(".fondo-animado");
+
+        let animacionVisible = true; // Variable para controlar el estado de la animación
+
+        // Agrega el evento de clic al botón para alternar la visibilidad de la animación
+        botonAlternar.addEventListener("click", () => {
+            if (animacionVisible) {
+                animacion.style.display = "none"; // Oculta la animación
+            } else {
+                animacion.style.display = "block"; // Muestra la animación
+            }
+            animacionVisible = !animacionVisible; // Cambia el estado
+        });
+
+    </script>
+
     </header>
 
 
@@ -232,6 +257,16 @@ $nombreMes = convertirMes($mes);
             });
         });
     </script>
+    <script type="text/javascript" src="../jquery/jquery.js"></script>
+    <script type="text/javascript" src="../jquery/jquery.validate.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/cerrarseccion.js"></script>
+    <script src="../js/ajustes.js"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+    <!-- jQuery 2.2.3 -->
+    <script src="../jquery/jquery-2.2.3.min.js"></script>
+    
 
 
 </body>

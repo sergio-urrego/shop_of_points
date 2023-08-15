@@ -16,7 +16,6 @@ function actualizarEmpresa(){
             showCancelButton: true,
             confirmButtonText: 'si, agregar',
             cancelButtonText: 'No, cancelar!',
-            reverseButtons: true
           }).then((result) => {
             if (result.isConfirmed) {
               $.post('../php/update/update_empresa.php',form)

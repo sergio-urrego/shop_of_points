@@ -11,6 +11,7 @@ $cedula=$_POST['cedula']
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">    
     <link rel="stylesheet" href="../css/historial_administrador.css">
 </head>
@@ -306,6 +307,30 @@ $cedula=$_POST['cedula']
                 </div>
             </div>
         </div>
+    <script>
+    // Crea el botón y añádelo al documento
+    const botonAlternar = document.createElement("button");
+    botonAlternar.innerHTML = '<i class="fas fa-pause" ></i>'; // Agregar icono
+    botonAlternar.id = "botonAlternar";
+    botonAlternar.classList.add("btn", "btn-primary", "btn-sm"); // Agregar la clase de boostrap
+    document.body.appendChild(botonAlternar);
+
+    // Obtiene la animación
+    const animacion = document.querySelector(".fondo-animado");
+
+    let animacionVisible = true; // Variable para controlar el estado de la animación
+
+    // Agrega el evento de clic al botón para alternar la visibilidad de la animación
+    botonAlternar.addEventListener("click", () => {
+        if (animacionVisible) {
+            animacion.style.display = "none"; // Oculta la animación
+        } else {
+            animacion.style.display = "block"; // Muestra la animación
+        }
+        animacionVisible = !animacionVisible; // Cambia el estado
+    });
+
+</script>
     </header>
     <img class="imagen" src="../img/descarga3.png" alt="" width="30% " height="30%">
 

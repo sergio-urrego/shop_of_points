@@ -14,7 +14,6 @@ function cerrarseccion(){
         showCancelButton: true,
         confirmButtonText: 'Si, cerrar!',
         cancelButtonText: 'No, cancelar!',
-        reverseButtons: true
       }).then((result) => {
         if (result.isConfirmed) {
             window.location.replace("http://localhost/shop_of_points/php/destruirseccion.php")

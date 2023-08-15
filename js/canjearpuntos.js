@@ -15,7 +15,6 @@ const swalWithBootstrapButtons = Swal.mixin({
     showCancelButton: true,
     confirmButtonText: 'si, canjear',
     cancelButtonText: 'No, cancelar!',
-    reverseButtons: true
   }).then((result) => {
     if (result.isConfirmed) {
          window.location.href="../php/inserts/canjearpuntos.php"

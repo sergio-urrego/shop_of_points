@@ -288,11 +288,11 @@
 
     <!--Formulario para seleccionar-->
     <div class="consultas desplegar" id="consultar">
-        <form class="form-control w-50">
+        <form class="form-control w-50" id="formularioselect"  action="../html/filtro_historialcanje_gerente.php" method="post" >
             <h1 class="text-center">Consultar  Clientes</h1>
             <div class=" form-control border-white">
                 <label for="">Cedula</label>
-                <input type="number" disabled class="form-control w-90 rellenar" name="cliente_cedula" >
+                <input type="number" readonly class="form-control w-90 rellenar" name="cliente_cedula" >
             </div>
 
             <div class="form-control border-white text-align-center">
@@ -316,7 +316,7 @@
             </div>
             
             <div class="form-control border-white">
-                <button class="btn1 azul">Ingresar</button>
+                <button class="btn1 azul" type="submit" >Ingresar</button>
             </div>
         </form>
         <button class="cerrar position-absolute btn">close</button>
@@ -404,6 +404,7 @@
     <script src="../js/cerrarseccion.js"></script>
     <script src="../js/updateusuario_gerente.js"></script>
     <script src="../js/eliminarcliente.js"></script>
+    <script src="../js/updatecanjegerente.js"></script>
     <!-- jQuery UI 1.11.4 -->
     <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
     <!-- jQuery 2.2.3 -->

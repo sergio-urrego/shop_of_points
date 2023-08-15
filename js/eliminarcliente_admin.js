@@ -16,7 +16,6 @@ function eliminadosuave(){
         showCancelButton: true,
         confirmButtonText: 'si, eliminar/desactivar',
         cancelButtonText: 'No, cancelar!',
-        reverseButtons: true
       }).then((result) => {
         if (result.isConfirmed) {
             $.post('../php/update/borradosuave_cliente_admin.php',form,  

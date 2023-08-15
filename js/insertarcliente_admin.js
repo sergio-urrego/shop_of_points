@@ -16,7 +16,6 @@ function insertarclientedesdeadmin(){
             showCancelButton: true,
             confirmButtonText: 'si, agregar',
             cancelButtonText: 'No, cancelar!',
-            reverseButtons: true
           }).then((result) => {
             if (result.isConfirmed) {
                 $.post('../php/inserts/insertarcliente_admin.php',form,  

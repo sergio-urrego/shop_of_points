@@ -10,26 +10,25 @@ $resultado=mysqli_query($con,$consulta);
 $validacion=mysqli_num_rows($resultado);
 $view = 0 ;
 $consulta2="SELECT c.cedula, u.nit_empresa, u.contraseña FROM clientes c inner join  detalles_clientes u on c.cedula = u.cedula_cliente where  c.cedula='$cedula' and u.contraseña='$contraseña' and u.nit_empresa='$nitempresa'";
+
 $resultado2=mysqli_query($con,$consulta2);
 $validacion2=mysqli_num_rows($resultado2);
 $view=mysqli_fetch_array($resultado);
+
 
 if ($validacion>0){
     while ($codigo=mysqli_fetch_array($resultado)){ 
         $valor=$codigo['codigo_tipo'];
         $empresa=$codigo['nit_empresa'];
         if ($valor==11111 & $empresa==$nitempresa){
-            session_start();
             $_SESSION['user']=$cedula;
         } 
         if($valor==10000 & $empresa==$nitempresa){
-            session_start();
             ob_start();
             $_SESSION['user']=$cedula;
             $_SESSION['empresa']=$nitempresa;
         }}
 }else if($validacion2>0){
-    session_start();
     $_SESSION['user']=$cedula;
     $_SESSION['empresa']=$nitempresa;
 }else{
@@ -39,6 +38,7 @@ if ($validacion>0){
 if ($validacion2>0){
     session_start();
     $_SESSION['user']=$cedula;
+    $_SESSION['empresa']=$nitempresa;
     echo 'USER';
 }
 else if ($view['codigo_tipo']==11111) {

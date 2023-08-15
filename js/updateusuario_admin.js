@@ -16,7 +16,6 @@ function actualizarusuariodesdeadmin(){
             showCancelButton: true,
             confirmButtonText: 'si, actualizar',
             cancelButtonText: 'No, cancelar!',
-            reverseButtons: true
           }).then((result) => {
             if (result.isConfirmed) {
                 $.post('../php/update/updatecliente_admin.php',form,  
